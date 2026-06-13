@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Canvas | A Cinematic Exploration of Your Psychological Architecture</title>
+    <meta name="description" content="Soul Canvas transforms your psychology into a living, breathing 3D particle sculpture. Answer 12 profound questions and watch your inner architecture materialize.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- The Living 3D Universe -->
+    <div id="webgl-container"></div>
+
+    <!-- Post-Processing Overlays -->
+    <div id="grain-overlay"></div>
+    <div id="vignette-overlay"></div>
+
+    <!-- Progress Bar -->
+    <div id="progress-bar-container">
+        <div id="progress-bar-fill"></div>
+    </div>
+    <div id="progress-counter"></div>
+
+    <!-- Sound Toggle -->
+    <button id="btn-sound" class="sound-toggle" aria-label="Toggle Sound">♪</button>
+
+    <!-- Phase 1: Landing -->
+    <div id="phase-landing" class="phase active">
+        <div class="landing-content">
+            <h1>Soul Canvas</h1>
+            <p class="subtitle">A cinematic exploration of your psychological architecture.</p>
+            <button id="btn-begin" class="elegant-btn">Begin Labyrinth</button>
+        </div>
+    </div>
+
+    <!-- Phase 2: The Labyrinth -->
+    <div id="phase-interview" class="phase">
+        <div class="question-container">
+            <p class="question-number" id="questionNumber"></p>
+            <div class="question-line"></div>
+            <h2 id="questionText">Initializing...</h2>
+            <div id="optionsContainer" class="options-grid"></div>
+        </div>
+    </div>
+
+    <!-- Phase 3: The Deep Analysis Terminal -->
+    <div id="phase-analysis" class="phase">
+        <div class="terminal">
+            <p id="terminalText"></p>
+        </div>
+    </div>
+
+    <!-- Phase 4: The Final Reveal -->
+    <div id="phase-canvas" class="phase">
+        <div class="canvas-overlay">
+            <h2 id="artTitle">The Soul Canvas</h2>
+            <p id="artDescription">A reflection of your inner geometry.</p>
+            <p id="artInsight"></p>
+            <p id="soulSignature"></p>
+            <button id="btn-share" class="elegant-btn share-btn">Save Masterpiece</button>
+            <button id="btn-restart" class="elegant-btn restart-btn">Begin Again</button>
+        </div>
+    </div>
+
+    <script src="app.js?v=9"></script>
+</body>
+</html>
