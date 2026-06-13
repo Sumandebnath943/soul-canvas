@@ -361,7 +361,7 @@ function initThree() {
             uJoltPos: { value: new THREE.Vector3(0, 0, 0) },
             uScatter: { value: 0.0 },
             uScaleMultiplier: { value: 1.0 },
-            uSizeMultiplier: { value: isMobile ? 700.0 : 350.0 },
+            uSizeMultiplier: { value: isMobile ? 900.0 : 350.0 },
             uTwist: { value: 0.0 }
         },
         vertexShader: `
@@ -893,8 +893,8 @@ async function finishInterview() {
 
     // Shift camera focus to the left for desktop, keep centered and push camera down for mobile (pushes art up)
     artOffsetX = isMobile ? 0 : -220;
-    const targetY = isMobile ? -180 : 0;
-    const targetZ = isMobile ? 650 : 400;
+    const targetY = isMobile ? -250 : 0;
+    const targetZ = isMobile ? 850 : 400;
     gsap.to(camera.position, { x: artOffsetX, y: targetY, z: targetZ, duration: 6, ease: "power3.inOut" });
 
     const artIndex = getArtIndex();
@@ -1054,7 +1054,7 @@ document.getElementById('btn-restart').addEventListener('click', () => {
     progressBarFill.style.width = '0%';
 
     artOffsetX = 0;
-    const startZ = isMobile ? 550 : 400;
+    const startZ = isMobile ? 650 : 400;
     gsap.to(camera.position, { x: 0, y: 0, z: startZ, duration: 4, ease: "power2.inOut" });
 
     updateDrone();
