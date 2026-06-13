@@ -361,6 +361,7 @@ function initThree() {
             uJoltPos: { value: new THREE.Vector3(0, 0, 0) },
             uScatter: { value: 0.0 },
             uScaleMultiplier: { value: 1.0 },
+            uSizeMultiplier: { value: isMobile ? 700.0 : 350.0 },
             uTwist: { value: 0.0 }
         },
         vertexShader: `
@@ -368,6 +369,7 @@ function initThree() {
             uniform float uChaos;
             uniform float uGravity;
             uniform float uFluidity;
+            uniform float uSizeMultiplier;
             uniform int uShape1;
             uniform int uShape2;
             uniform float uMorphProgression;
@@ -607,7 +609,7 @@ function initThree() {
 
                 // Particle Size Variation — mix of fine dust and large bright "stars"
                 float sizeVar = 0.8 + pow(aRandom, 4.0) * 4.0;
-                gl_PointSize = sizeVar * (350.0 / -mvPosition.z);
+                gl_PointSize = sizeVar * (uSizeMultiplier / -mvPosition.z);
                 gl_Position = projectionMatrix * mvPosition;
             }
         `,
