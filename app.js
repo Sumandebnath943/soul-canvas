@@ -985,33 +985,36 @@ document.getElementById('btn-share').addEventListener('click', () => {
     ctx.lineWidth = 1;
     ctx.strokeRect(30, 30, w - 60, h - 60);
 
+    const marginX = isMobile ? 40 : 60;
+    const maxTextWidth = isMobile ? w - 80 : 480;
+
     ctx.fillStyle = '#1a1a1a';
-    ctx.font = '300 44px "Cormorant Garamond", serif';
-    ctx.fillText(document.getElementById('artTitle').innerText, 60, h - 280);
+    ctx.font = isMobile ? '300 32px "Cormorant Garamond", serif' : '300 44px "Cormorant Garamond", serif';
+    ctx.fillText(document.getElementById('artTitle').innerText, marginX, isMobile ? h - 280 : h - 280);
 
     ctx.fillStyle = '#666';
-    ctx.font = '300 13px "Inter", sans-serif';
-    ctx.fillText(document.getElementById('artDescription').innerText.toUpperCase(), 60, h - 245);
+    ctx.font = isMobile ? '300 11px "Inter", sans-serif' : '300 13px "Inter", sans-serif';
+    ctx.fillText(document.getElementById('artDescription').innerText.toUpperCase(), marginX, isMobile ? h - 250 : h - 245);
 
     ctx.fillStyle = '#1a1a1a';
-    ctx.font = 'italic 16px "Cormorant Garamond", serif';
+    ctx.font = isMobile ? 'italic 14px "Cormorant Garamond", serif' : 'italic 16px "Cormorant Garamond", serif';
     const words = document.getElementById('artInsight').innerText.split(' ');
-    let line = '', y = h - 200;
+    let line = '', y = isMobile ? h - 210 : h - 200;
     for (let i = 0; i < words.length; i++) {
         let test = line + words[i] + ' ';
-        if (ctx.measureText(test).width > 480 && i > 0) {
-            ctx.fillText(line, 60, y); line = words[i] + ' '; y += 24;
+        if (ctx.measureText(test).width > maxTextWidth && i > 0) {
+            ctx.fillText(line, marginX, y); line = words[i] + ' '; y += isMobile ? 20 : 24;
         } else { line = test; }
     }
-    ctx.fillText(line, 60, y);
+    ctx.fillText(line, marginX, y);
 
     const sig = document.getElementById('soulSignature').innerText;
-    if (sig) { ctx.font = 'italic 18px "Cormorant Garamond", serif'; ctx.fillStyle = '#333'; ctx.fillText(sig, 60, y + 40); }
+    if (sig) { ctx.font = isMobile ? 'italic 16px "Cormorant Garamond", serif' : 'italic 18px "Cormorant Garamond", serif'; ctx.fillStyle = '#333'; ctx.fillText(sig, marginX, y + (isMobile ? 30 : 40)); }
 
     ctx.fillStyle = 'rgba(26,26,26,0.15)';
     ctx.font = '300 10px "Inter", sans-serif';
     ctx.textAlign = 'right';
-    ctx.fillText('Soul Canvas — ' + new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }), w - 60, h - 40);
+    ctx.fillText('Soul Canvas — ' + new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }), w - marginX, h - 40);
 
     const link = document.createElement('a');
     link.download = 'SoulCanvas_Masterpiece.png';
