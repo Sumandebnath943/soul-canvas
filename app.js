@@ -891,9 +891,9 @@ async function finishInterview() {
 
     transitionPhase(phaseInterview, phaseAnalysis);
 
-    // Shift camera focus to the left for desktop, keep centered and top-aligned for mobile
+    // Shift camera focus to the left for desktop, keep centered and push camera down for mobile (pushes art up)
     artOffsetX = isMobile ? 0 : -220;
-    const targetY = isMobile ? 120 : 0;
+    const targetY = isMobile ? -180 : 0;
     const targetZ = isMobile ? 650 : 400;
     gsap.to(camera.position, { x: artOffsetX, y: targetY, z: targetZ, duration: 6, ease: "power3.inOut" });
 
