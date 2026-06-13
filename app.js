@@ -889,9 +889,11 @@ async function finishInterview() {
 
     transitionPhase(phaseInterview, phaseAnalysis);
 
-    // Shift camera focus to the left, which pushes the centered art to the right side of the screen
-    artOffsetX = -220;
-    gsap.to(camera.position, { x: artOffsetX, y: 0, z: 400, duration: 6, ease: "power3.inOut" });
+    // Shift camera focus to the left for desktop, keep centered and top-aligned for mobile
+    artOffsetX = isMobile ? 0 : -220;
+    const targetY = isMobile ? 120 : 0;
+    const targetZ = isMobile ? 650 : 400;
+    gsap.to(camera.position, { x: artOffsetX, y: targetY, z: targetZ, duration: 6, ease: "power3.inOut" });
 
     const artIndex = getArtIndex();
 
@@ -1050,7 +1052,8 @@ document.getElementById('btn-restart').addEventListener('click', () => {
     progressBarFill.style.width = '0%';
 
     artOffsetX = 0;
-    gsap.to(camera.position, { x: 0, y: 0, z: 400, duration: 4, ease: "power2.inOut" });
+    const startZ = isMobile ? 550 : 400;
+    gsap.to(camera.position, { x: 0, y: 0, z: startZ, duration: 4, ease: "power2.inOut" });
 
     updateDrone();
     updateProgress();

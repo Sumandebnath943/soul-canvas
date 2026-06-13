@@ -421,12 +421,20 @@ body {
         max-width: 100%;
     }
 
+    .terminal {
+        max-width: 90%;
+        font-size: 0.75rem;
+        padding: 1.5rem;
+    }
+
     .canvas-overlay {
-        bottom: 2rem;
+        bottom: 1.5rem;
         left: 1.5rem;
         right: 1.5rem;
-        max-width: 100%;
+        max-width: calc(100% - 3rem);
         padding: 1.5rem;
+        max-height: 40vh;
+        overflow-y: auto;
     }
 
     .canvas-overlay h2 {
@@ -436,6 +444,14 @@ body {
     .canvas-overlay #artInsight {
         font-size: 0.95rem;
         max-width: 100%;
+    }
+
+    .share-btn, .restart-btn {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+        text-align: center;
     }
 
     #progress-counter {
