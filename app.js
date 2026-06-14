@@ -9,7 +9,7 @@ const questions = [
         text: "You enter a room you've never seen before. What do you notice first?",
         options: [
             { text: "The silence", effects: { resonance: 0.7, gravity: 0.3, luminance: -0.2 }, anim: "flow" },
-            { text: "The exits", effects: { gravity: 0.6, chaos: -0.3, fluidity: -0.2 }, anim: "contract" },
+            { text: "The exits", effects: { gravity: 0.6, chaos: -0.3, fluidity: -0.2, luminance: -0.3 }, anim: "contract" },
             { text: "The light", effects: { luminance: 0.8, fluidity: 0.3, resonance: 0.2 }, anim: "expand" },
             { text: "The smell", effects: { chaos: 0.5, fluidity: 0.6, resonance: 0.3 }, anim: "flow" }
         ]
@@ -19,13 +19,13 @@ const questions = [
         options: [
             { text: "Exposed", effects: { gravity: 0.7, chaos: 0.3, luminance: -0.4 }, anim: "contract" },
             { text: "Understood", effects: { resonance: 0.8, fluidity: 0.5, luminance: 0.3 }, anim: "expand" },
-            { text: "Suspicious", effects: { chaos: -0.5, gravity: 0.8, fluidity: -0.3 }, anim: "twist" }
+            { text: "Suspicious", effects: { chaos: -0.5, gravity: 0.8, fluidity: -0.3, luminance: -0.4, resonance: -0.3 }, anim: "twist" }
         ]
     },
     {
         text: "When you lie awake at 3 AM, your mind is most likely…",
         options: [
-            { text: "Replaying a conversation", effects: { resonance: 0.6, gravity: 0.5, chaos: 0.2 }, anim: "twist" },
+            { text: "Replaying a conversation", effects: { resonance: 0.6, gravity: 0.5, chaos: 0.2, luminance: -0.3 }, anim: "twist" },
             { text: "Building something", effects: { gravity: 0.4, fluidity: -0.3, luminance: 0.5 }, anim: "expand" },
             { text: "Drifting in images", effects: { fluidity: 0.8, chaos: 0.3, luminance: 0.3 }, anim: "flow" },
             { text: "Completely still", effects: { resonance: -0.3, chaos: -0.6, gravity: 0.2 }, anim: "contract" }
@@ -35,7 +35,7 @@ const questions = [
         text: "Which would you keep, if you could only choose one?",
         options: [
             { text: "A key to a door you haven't found", effects: { chaos: 0.5, resonance: 0.5, luminance: 0.4 }, anim: "expand" },
-            { text: "A letter you'll never send", effects: { gravity: 0.6, resonance: 0.7, fluidity: -0.3 }, anim: "contract" },
+            { text: "A letter you'll never send", effects: { gravity: 0.6, resonance: 0.7, fluidity: -0.3, luminance: -0.4 }, anim: "contract" },
             { text: "A map with no labels", effects: { chaos: 0.7, fluidity: 0.7, luminance: 0.2 }, anim: "scatter" }
         ]
     },
@@ -60,7 +60,7 @@ const questions = [
         options: [
             { text: "Tear it apart and rebuild", effects: { chaos: 0.5, gravity: 0.4, fluidity: -0.5 }, anim: "scatter" },
             { text: "Leave it. The flaw gives it character.", effects: { fluidity: 0.7, resonance: 0.4, chaos: 0.2 }, anim: "flow" },
-            { text: "Fix it so no one will ever notice", effects: { gravity: 0.8, chaos: -0.5, luminance: 0.2 }, anim: "twist" }
+            { text: "Fix it so no one will ever notice", effects: { gravity: 0.8, chaos: -0.5, luminance: -0.4, resonance: -0.3 }, anim: "twist" }
         ]
     },
     {
@@ -75,7 +75,7 @@ const questions = [
     {
         text: "Someone you admire disappoints you. Your first instinct is to…",
         options: [
-            { text: "Withdraw quietly", effects: { gravity: 0.6, fluidity: -0.4, chaos: -0.3 }, anim: "contract" },
+            { text: "Withdraw quietly", effects: { gravity: 0.6, fluidity: -0.4, chaos: -0.3, luminance: -0.5, resonance: -0.4 }, anim: "contract" },
             { text: "Confront them directly", effects: { chaos: 0.5, resonance: 0.6, luminance: 0.3 }, anim: "spike" },
             { text: "Understand. Everyone is flawed.", effects: { fluidity: 0.6, resonance: 0.5, gravity: -0.2 }, anim: "flow" }
         ]
@@ -86,22 +86,125 @@ const questions = [
             { text: "Doors", effects: { chaos: 0.3, gravity: 0.3, fluidity: 0.3 }, anim: "expand" },
             { text: "Mirrors", effects: { resonance: 0.8, luminance: 0.4, gravity: 0.3 }, anim: "twist" },
             { text: "Storms", effects: { chaos: 0.8, fluidity: 0.5, luminance: -0.2 }, anim: "scatter" },
-            { text: "Roots", effects: { gravity: 0.9, fluidity: -0.3, resonance: 0.4 }, anim: "contract" }
+            { text: "Roots", effects: { gravity: 0.9, fluidity: -0.3, resonance: 0.4, luminance: -0.3 }, anim: "contract" }
         ]
     },
     {
         text: "You're given absolute power for one day. You use it to…",
         options: [
-            { text: "Restructure everything", effects: { gravity: 0.9, chaos: -0.5, fluidity: -0.4 }, anim: "twist" },
+            { text: "Restructure everything", effects: { gravity: 0.9, chaos: -0.5, fluidity: -0.4, luminance: -0.3, resonance: -0.3 }, anim: "twist" },
             { text: "Dissolve all boundaries", effects: { chaos: 0.8, fluidity: 0.9, luminance: 0.5 }, anim: "scatter" },
             { text: "Observe without intervening", effects: { resonance: 0.7, fluidity: 0.3, luminance: 0.3 }, anim: "flow" }
         ]
     },
     {
-        text: "Finally… what frightens you more?",
+        text: "What frightens you more?",
         options: [
             { text: "That nothing matters", effects: { chaos: 0.6, luminance: -0.5, resonance: -0.3 }, anim: "scatter" },
             { text: "That everything does", effects: { gravity: 0.7, resonance: 0.6, luminance: 0.3 }, anim: "contract" }
+        ]
+    },
+    {
+        text: "What survives in you after everything else is stripped away?",
+        options: [
+            { text: "A single, stubborn certainty", effects: { gravity: 0.8, chaos: -0.4, resonance: 0.4 }, anim: "contract" },
+            { text: "A question I still can't answer", effects: { resonance: 0.7, chaos: 0.4, gravity: -0.2 }, anim: "twist" },
+            { text: "The ability to start over", effects: { fluidity: 0.7, luminance: 0.5, chaos: 0.3 }, anim: "expand" },
+            { text: "Nothing — and that is freeing", effects: { chaos: 0.6, gravity: -0.5, luminance: -0.3 }, anim: "scatter" }
+        ]
+    },
+    {
+        text: "You are handed a blank page and unlimited time. You…",
+        options: [
+            { text: "Fill it edge to edge", effects: { chaos: 0.7, fluidity: 0.6, luminance: 0.4 }, anim: "scatter" },
+            { text: "Write one perfect line", effects: { gravity: 0.6, resonance: 0.6, chaos: -0.4 }, anim: "contract" },
+            { text: "Leave it blank, on purpose", effects: { resonance: 0.5, chaos: -0.6, luminance: 0.2 }, anim: "flow" },
+            { text: "Fold it into something else", effects: { fluidity: 0.7, chaos: 0.3, gravity: 0.2 }, anim: "twist" }
+        ]
+    },
+    {
+        text: "Which silence do you trust most?",
+        options: [
+            { text: "The silence after a storm", effects: { fluidity: 0.6, luminance: 0.4, chaos: -0.3 }, anim: "flow" },
+            { text: "The silence before a decision", effects: { gravity: 0.7, resonance: 0.5, chaos: -0.3 }, anim: "contract" },
+            { text: "The silence between two who understand each other", effects: { resonance: 0.8, luminance: 0.4, fluidity: 0.3 }, anim: "expand" }
+        ]
+    },
+    {
+        text: "Something in you wants out. It is most like…",
+        options: [
+            { text: "A held breath", effects: { gravity: 0.6, chaos: 0.3, fluidity: -0.2 }, anim: "contract" },
+            { text: "A struck match", effects: { chaos: 0.8, luminance: 0.7 }, anim: "spike" },
+            { text: "A tide going out", effects: { fluidity: 0.8, gravity: -0.3 }, anim: "flow" },
+            { text: "A held note finally let go", effects: { resonance: 0.7, luminance: 0.5, fluidity: 0.4 }, anim: "expand" }
+        ]
+    },
+    {
+        text: "When the world speeds up, you…",
+        options: [
+            { text: "Speed up with it, gladly", effects: { chaos: 0.7, fluidity: 0.5, luminance: 0.3 }, anim: "scatter" },
+            { text: "Plant your feet and slow down", effects: { gravity: 0.8, chaos: -0.5 }, anim: "contract" },
+            { text: "Step outside of time entirely", effects: { resonance: 0.6, fluidity: 0.4, luminance: 0.3 }, anim: "flow" }
+        ]
+    },
+    {
+        text: "What does your darkness look like?",
+        options: [
+            { text: "A locked room", effects: { gravity: 0.7, luminance: -0.6, fluidity: -0.3 }, anim: "contract" },
+            { text: "Deep water", effects: { fluidity: 0.8, luminance: -0.5, chaos: 0.3 }, anim: "flow" },
+            { text: "Static and noise", effects: { chaos: 0.8, luminance: -0.4, resonance: -0.3 }, anim: "scatter" },
+            { text: "I don't look — I keep moving", effects: { gravity: 0.4, chaos: 0.3, resonance: -0.4 }, anim: "twist" }
+        ]
+    },
+    {
+        text: "You feel most alive when you are…",
+        options: [
+            { text: "Building toward something certain", effects: { gravity: 0.7, luminance: 0.5, chaos: -0.3 }, anim: "expand" },
+            { text: "Lost in something larger than yourself", effects: { fluidity: 0.8, resonance: 0.6, luminance: 0.5 }, anim: "flow" },
+            { text: "On the edge of losing control", effects: { chaos: 0.9, luminance: 0.6 }, anim: "spike" },
+            { text: "Perfectly, completely still", effects: { resonance: 0.6, chaos: -0.7, gravity: 0.3 }, anim: "contract" }
+        ]
+    },
+    {
+        text: "A truth arrives. How does it reach you?",
+        options: [
+            { text: "Like a slow dawn", effects: { luminance: 0.7, fluidity: 0.4, resonance: 0.4 }, anim: "expand" },
+            { text: "Like a crack of thunder", effects: { chaos: 0.7, luminance: 0.6, resonance: 0.3 }, anim: "spike" },
+            { text: "Like a weight settling", effects: { gravity: 0.8, resonance: 0.5, chaos: -0.3 }, anim: "contract" }
+        ]
+    },
+    {
+        text: "Which would you rather be?",
+        options: [
+            { text: "A river", effects: { fluidity: 0.9, chaos: 0.3 }, anim: "flow" },
+            { text: "A mountain", effects: { gravity: 0.9, chaos: -0.4 }, anim: "contract" },
+            { text: "A fire", effects: { chaos: 0.7, luminance: 0.8 }, anim: "spike" },
+            { text: "A field of light", effects: { luminance: 0.8, resonance: 0.5, fluidity: 0.3 }, anim: "expand" }
+        ]
+    },
+    {
+        text: "What do you do with the unbearable?",
+        options: [
+            { text: "Hold it, quietly, alone", effects: { gravity: 0.7, resonance: 0.6, luminance: -0.3 }, anim: "contract" },
+            { text: "Transform it into something to share", effects: { resonance: 0.7, fluidity: 0.5, luminance: 0.4 }, anim: "expand" },
+            { text: "Let it move through me and out", effects: { fluidity: 0.8, chaos: 0.3 }, anim: "flow" }
+        ]
+    },
+    {
+        text: "Your attention is a…",
+        options: [
+            { text: "Spotlight — narrow and intense", effects: { gravity: 0.6, luminance: 0.5, chaos: -0.3 }, anim: "contract" },
+            { text: "Floodlight — everywhere at once", effects: { chaos: 0.6, fluidity: 0.6, luminance: 0.4 }, anim: "scatter" },
+            { text: "Candle — small, steady, warm", effects: { resonance: 0.6, luminance: 0.4, chaos: -0.3 }, anim: "flow" }
+        ]
+    },
+    {
+        text: "At the very end, what would you want to have been?",
+        options: [
+            { text: "Unforgettable", effects: { chaos: 0.5, luminance: 0.7, resonance: 0.5 }, anim: "spike" },
+            { text: "Unshakable", effects: { gravity: 0.9, resonance: 0.4, chaos: -0.3 }, anim: "contract" },
+            { text: "Unbounded", effects: { fluidity: 0.8, chaos: 0.5, luminance: 0.4 }, anim: "scatter" },
+            { text: "Understood", effects: { resonance: 0.9, luminance: 0.4, fluidity: 0.3 }, anim: "expand" }
         ]
     }
 ];
@@ -202,58 +305,58 @@ const ART_SUBTITLES = [
 ];
 
 const ART_AFFINITIES = [
-    [0.3, 0.3, 0.3, 0.5, 0.5],
-    [0.1, 0.4, 0.7, 0.3, 0.4],
-    [0.3, 0.2, 0.6, 0.5, 0.6],
-    [0.2, 0.8, 0.3, 0.2, 0.2],
-    [0.7, 0.1, 0.8, 0.4, 0.2],
-    [0.0, 0.9, 0.0, 0.2, 0.3],
-    [0.1, 0.5, 0.1, 0.1, 0.8],
-    [0.4, 0.1, 0.5, 0.8, 0.2],
-    [0.5, 0.4, 0.2, 0.3, 0.7],
-    [0.1, 0.7, 0.1, 0.6, 0.4],
-    [0.0, 0.2, 0.0, 0.9, 0.6],
-    [0.8, 0.0, 0.2, 0.4, 0.5],
-    [0.9, 0.1, 0.3, 0.7, 0.4],
-    [0.2, 0.1, 0.8, 0.3, 0.7],
-    [0.6, 0.1, 0.3, 0.2, 0.9],
-    [0.6, 0.2, 0.7, 0.6, 0.3],  // 15: Nebula Cloud
-    [0.3, 0.9, 0.4, 0.8, 0.2],  // 16: Accretion Disk
-    [0.2, 0.7, 0.3, 0.5, 0.6],  // 17: Barred Galaxy
-    [0.1, 0.6, 0.2, 0.7, 0.8],  // 18: Protoplanetary Disk
-    [0.5, 0.3, 0.5, 0.4, 0.9],  // 19: Cosmic Web
-    [0.4, 0.1, 0.9, 0.6, 0.5],  // 20: Aurora Veil
+    [0.30, 0.88, 0.61, 0.96, 0.99],  // 0: Living Cell
+    [0.26, 0.87, 0.75, 0.61, 0.97],  // 1: Golden Torus
+    [0.35, 0.75, 0.79, 0.95, 0.99],  // 2: Double Helix
+    [0.25, 0.79, 0.44, 0.73, 0.99],  // 3: Spiral Galaxy
+    [0.54, 0.59, 0.90, 0.95, 0.99],  // 4: Lissajous Ribbon
+    [0.09, 0.98, 0.37, 0.72, 0.99],  // 5: Monolith
+    [0.30, 0.71, 0.65, 0.62, 0.99],  // 6: Hollow Shell
+    [0.38, 0.66, 0.48, 0.96, 1.00],  // 7: Wormhole
+    [0.53, 0.84, 0.55, 0.83, 0.98],  // 8: Lemniscate
+    [0.13, 0.96, 0.29, 0.91, 1.00],  // 9: Hourglass
+    [0.44, 0.86, 0.34, 0.81, 0.98],  // 10: Stellated Star
+    [0.64, 0.69, 0.44, 0.96, 0.99],  // 11: Orbital Shells
+    [0.84, 0.48, 0.64, 0.96, 0.99],  // 12: Supernova
+    [0.45, 0.66, 0.53, 0.76, 0.99],  // 13: Möbius Strip
+    [0.42, 0.85, 0.37, 0.97, 0.99],  // 14: Neural Clusters
+    [0.38, 0.55, 0.70, 0.97, 1.00],  // 15: Nebula Cloud
+    [0.28, 0.93, 0.50, 0.52, 0.95],  // 16: Accretion Disk
+    [0.13, 0.93, 0.56, 0.70, 0.99],  // 17: Barred Galaxy
+    [0.08, 0.96, 0.50, 0.51, 0.99],  // 18: Protoplanetary Disk
+    [0.47, 0.73, 0.61, 0.97, 0.99],  // 19: Cosmic Web
+    [0.79, 0.37, 0.92, 0.95, 0.99],  // 20: Aurora Veil
     // GAIA · Flora
-    [0.2, 0.7, 0.4, 0.5, 0.7],  // 21: World Tree
-    [0.1, 0.3, 0.4, 0.8, 0.7],  // 22: Lotus
-    [0.2, 0.3, 0.7, 0.4, 0.6],  // 23: Koru
-    [0.5, 0.1, 0.8, 0.7, 0.3],  // 24: Dandelion
-    [0.3, 0.4, 0.7, 0.5, 0.6],  // 25: Vine
+    [0.13, 0.86, 0.71, 0.83, 0.99],  // 21: World Tree
+    [0.54, 0.72, 0.70, 0.60, 0.97],  // 22: Lotus
+    [0.81, 0.53, 0.83, 0.77, 0.92],  // 23: Koru
+    [0.29, 0.55, 0.91, 0.93, 1.00],  // 24: Dandelion
+    [0.20, 0.70, 0.83, 0.78, 1.00],  // 25: Vine
     // GAIA · Fauna
-    [0.3, 0.2, 0.9, 0.5, 0.4],  // 26: Jellyfish
-    [0.7, 0.2, 0.8, 0.4, 0.3],  // 27: Murmuration
-    [0.3, 0.2, 0.6, 0.8, 0.5],  // 28: Butterfly
-    [0.1, 0.5, 0.3, 0.4, 0.8],  // 29: Nautilus
-    [0.3, 0.6, 0.3, 0.4, 0.7],  // 30: Coral
-    [0.2, 0.3, 0.5, 0.9, 0.6],  // 31: Peacock
+    [0.50, 0.38, 0.93, 0.95, 1.00],  // 26: Jellyfish
+    [0.38, 0.64, 0.91, 0.67, 0.98],  // 27: Murmuration
+    [0.70, 0.68, 0.51, 0.76, 0.97],  // 28: Butterfly
+    [0.35, 0.93, 0.56, 0.72, 0.98],  // 29: Nautilus
+    [0.32, 0.77, 0.61, 0.82, 0.99],  // 30: Coral
+    [0.11, 0.99, 0.24, 0.54, 0.98],  // 31: Peacock
     // GAIA · Elements
-    [0.8, 0.2, 0.6, 0.9, 0.3],  // 32: Flame
-    [0.6, 0.8, 0.5, 0.3, 0.3],  // 33: Maelstrom
-    [0.6, 0.5, 0.9, 0.4, 0.4],  // 34: Cresting Wave
-    [0.9, 0.1, 0.3, 0.9, 0.4],  // 35: Lightning
-    [0.9, 0.5, 0.6, 0.3, 0.3],  // 36: Tornado
+    [0.61, 0.44, 0.74, 0.97, 1.00],  // 32: Flame
+    [0.47, 0.82, 0.63, 0.70, 0.76],  // 33: Maelstrom
+    [0.57, 0.52, 0.93, 0.74, 0.98],  // 34: Cresting Wave
+    [0.66, 0.66, 0.70, 0.96, 0.98],  // 35: Lightning
+    [0.55, 0.54, 0.55, 0.96, 1.00],  // 36: Tornado
     // GAIA · Structure
-    [0.1, 0.2, 0.2, 0.7, 0.8],  // 37: Snowflake
-    [0.2, 0.7, 0.1, 0.6, 0.7],  // 38: Geode
-    [0.1, 0.4, 0.3, 0.7, 0.9],  // 39: Mandala
-    [0.3, 0.6, 0.2, 0.3, 0.8],  // 40: Labyrinth
-    [0.1, 0.8, 0.2, 0.7, 0.8],  // 41: Cathedral
+    [0.30, 0.97, 0.31, 0.68, 0.98],  // 37: Snowflake
+    [0.19, 0.77, 0.46, 0.95, 1.00],  // 38: Geode
+    [0.50, 0.84, 0.44, 0.61, 0.97],  // 39: Mandala
+    [0.28, 0.95, 0.43, 0.89, 0.99],  // 40: Labyrinth
+    [0.09, 0.93, 0.53, 0.91, 1.00],  // 41: Cathedral
     // GAIA · Soul & Emergence
-    [0.9, 0.2, 0.7, 0.5, 0.5],  // 42: Lorenz Attractor
-    [0.7, 0.4, 0.6, 0.5, 0.6],  // 43: Aizawa Attractor
-    [0.7, 0.3, 0.6, 0.9, 0.6],  // 44: Phoenix
-    [0.2, 0.3, 0.4, 0.7, 0.9],  // 45: Eye
-    [0.4, 0.5, 0.5, 0.7, 0.8],  // 46: Heart
+    [0.63, 0.55, 0.69, 0.77, 0.98],  // 42: Lorenz Attractor
+    [0.48, 0.75, 0.76, 0.80, 0.98],  // 43: Aizawa Attractor
+    [0.41, 0.56, 0.74, 0.79, 0.99],  // 44: Phoenix
+    [0.18, 0.67, 0.67, 0.97, 1.00],  // 45: Eye
+    [0.18, 0.65, 0.60, 0.78, 1.00],  // 46: Heart
 ];
 
 // Per-form fill scale at reveal — normalizes apparent size so each form fills the
