@@ -1,5 +1,5 @@
 :root {
-    --bg: #f4f4f0;
+    --bg: #f5f1eb;
     --charcoal: #1a1a1a;
     --accent: #666666;
 }
@@ -19,6 +19,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    transition: background-color 3s ease;
 }
 
 /* 3D Canvas Background */
@@ -40,12 +41,15 @@ body {
     left: 3rem;
     max-width: 38%;
     z-index: 10;
-    padding: 2rem;
+    padding: 1.8rem 2.2rem;
     opacity: 0;
     color: var(--charcoal);
-    background: rgba(244, 244, 240, 0.55);
-    backdrop-filter: blur(10px);
-    border-left: 2px solid rgba(26, 26, 26, 0.15);
+    background: rgba(245, 241, 235, 0.62);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    border-left: 2px solid rgba(26, 26, 26, 0.18);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
 }
 
 #grain-overlay {
@@ -56,7 +60,7 @@ body {
     height: 200%;
     z-index: 1;
     pointer-events: none;
-    opacity: 0.04;
+    opacity: 0.018;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     animation: grainDrift 0.5s steps(4) infinite;
 }
@@ -77,7 +81,7 @@ body {
     height: 100vh;
     z-index: 1;
     pointer-events: none;
-    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.15) 100%);
+    background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.07) 100%);
 }
 
 /* ===== PROGRESS BAR ===== */

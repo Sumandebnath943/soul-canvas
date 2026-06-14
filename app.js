@@ -131,7 +131,19 @@ const ART_NAMES = [
     "The Living Cell", "The Golden Torus", "The Double Helix", "The Spiral Galaxy",
     "The Lissajous Ribbon", "The Monolith", "The Hollow Shell", "The Wormhole",
     "The Lemniscate", "The Hourglass", "The Stellated Star", "The Orbital Shells",
-    "The Supernova", "The Möbius Strip", "The Neural Clusters"
+    "The Supernova", "The Möbius Strip", "The Neural Clusters",
+    "The Nebula Cloud", "The Accretion Disk", "The Barred Galaxy",
+    "The Protoplanetary Disk", "The Cosmic Web", "The Aurora Veil",
+    // GAIA · Flora
+    "The World Tree", "The Lotus", "The Koru", "The Dandelion", "The Vine",
+    // GAIA · Fauna
+    "The Jellyfish", "The Murmuration", "The Butterfly", "The Nautilus", "The Coral", "The Peacock",
+    // GAIA · Elements
+    "The Flame", "The Maelstrom", "The Cresting Wave", "The Lightning", "The Tornado",
+    // GAIA · Structure
+    "The Snowflake", "The Geode", "The Mandala", "The Labyrinth", "The Cathedral",
+    // GAIA · Soul & Emergence
+    "The Lorenz Attractor", "The Aizawa Attractor", "The Phoenix", "The Eye", "The Heart"
 ];
 
 const ART_SUBTITLES = [
@@ -149,7 +161,44 @@ const ART_SUBTITLES = [
     "Uncertainty made beautiful — every possibility suspended.",
     "An explosive release of stored interior pressure.",
     "A surface with only one side — endlessly self-referential.",
-    "Clustered nodes of meaning connected by invisible threads."
+    "Clustered nodes of meaning connected by invisible threads.",
+    "The formless place where everything new is born.",
+    "All things drawn inward, compressed, made brilliant by surrender.",
+    "Structure imposed across chaos — the spine that holds the spiral together.",
+    "The patience of formation — rings of matter waiting to become worlds.",
+    "Everything connected by threads too vast to see.",
+    "Emotion made visible — the sky charged with what cannot be spoken.",
+    // GAIA · Flora
+    "Everything you are grew from a single seed.",
+    "You open only when the water is still.",
+    "Becoming, forever mid-unfurl.",
+    "You hold on loosely, and let the wind decide.",
+    "You climb by holding to what is near.",
+    // GAIA · Fauna
+    "You move by surrender, not by force.",
+    "A thousand small decisions, one shape.",
+    "You became by dissolving first.",
+    "You grow by adding rooms, never tearing down.",
+    "You build slowly, together, in the dark.",
+    "You were never meant to be subtle.",
+    // GAIA · Elements
+    "You are warmest where you are least solid.",
+    "Everything you release, you release inward.",
+    "You gather for a long time before you break.",
+    "Your clarity arrives all at once, or not at all.",
+    "You are calm at the center of your own chaos.",
+    // GAIA · Structure
+    "No one has ever been made the way you were.",
+    "Your richest self is the one you keep hidden.",
+    "At your center, everything agrees.",
+    "The only way out was always further in.",
+    "You build upward, to hold something larger than yourself.",
+    // GAIA · Soul & Emergence
+    "Tiny beginnings, unrepeatable lives.",
+    "You orbit a center you cannot name.",
+    "You have ended before, and chosen to begin.",
+    "You are the one part of you that watches all the rest.",
+    "You keep time for everything you feel."
 ];
 
 const ART_AFFINITIES = [
@@ -168,6 +217,100 @@ const ART_AFFINITIES = [
     [0.9, 0.1, 0.3, 0.7, 0.4],
     [0.2, 0.1, 0.8, 0.3, 0.7],
     [0.6, 0.1, 0.3, 0.2, 0.9],
+    [0.6, 0.2, 0.7, 0.6, 0.3],  // 15: Nebula Cloud
+    [0.3, 0.9, 0.4, 0.8, 0.2],  // 16: Accretion Disk
+    [0.2, 0.7, 0.3, 0.5, 0.6],  // 17: Barred Galaxy
+    [0.1, 0.6, 0.2, 0.7, 0.8],  // 18: Protoplanetary Disk
+    [0.5, 0.3, 0.5, 0.4, 0.9],  // 19: Cosmic Web
+    [0.4, 0.1, 0.9, 0.6, 0.5],  // 20: Aurora Veil
+    // GAIA · Flora
+    [0.2, 0.7, 0.4, 0.5, 0.7],  // 21: World Tree
+    [0.1, 0.3, 0.4, 0.8, 0.7],  // 22: Lotus
+    [0.2, 0.3, 0.7, 0.4, 0.6],  // 23: Koru
+    [0.5, 0.1, 0.8, 0.7, 0.3],  // 24: Dandelion
+    [0.3, 0.4, 0.7, 0.5, 0.6],  // 25: Vine
+    // GAIA · Fauna
+    [0.3, 0.2, 0.9, 0.5, 0.4],  // 26: Jellyfish
+    [0.7, 0.2, 0.8, 0.4, 0.3],  // 27: Murmuration
+    [0.3, 0.2, 0.6, 0.8, 0.5],  // 28: Butterfly
+    [0.1, 0.5, 0.3, 0.4, 0.8],  // 29: Nautilus
+    [0.3, 0.6, 0.3, 0.4, 0.7],  // 30: Coral
+    [0.2, 0.3, 0.5, 0.9, 0.6],  // 31: Peacock
+    // GAIA · Elements
+    [0.8, 0.2, 0.6, 0.9, 0.3],  // 32: Flame
+    [0.6, 0.8, 0.5, 0.3, 0.3],  // 33: Maelstrom
+    [0.6, 0.5, 0.9, 0.4, 0.4],  // 34: Cresting Wave
+    [0.9, 0.1, 0.3, 0.9, 0.4],  // 35: Lightning
+    [0.9, 0.5, 0.6, 0.3, 0.3],  // 36: Tornado
+    // GAIA · Structure
+    [0.1, 0.2, 0.2, 0.7, 0.8],  // 37: Snowflake
+    [0.2, 0.7, 0.1, 0.6, 0.7],  // 38: Geode
+    [0.1, 0.4, 0.3, 0.7, 0.9],  // 39: Mandala
+    [0.3, 0.6, 0.2, 0.3, 0.8],  // 40: Labyrinth
+    [0.1, 0.8, 0.2, 0.7, 0.8],  // 41: Cathedral
+    // GAIA · Soul & Emergence
+    [0.9, 0.2, 0.7, 0.5, 0.5],  // 42: Lorenz Attractor
+    [0.7, 0.4, 0.6, 0.5, 0.6],  // 43: Aizawa Attractor
+    [0.7, 0.3, 0.6, 0.9, 0.6],  // 44: Phoenix
+    [0.2, 0.3, 0.4, 0.7, 0.9],  // 45: Eye
+    [0.4, 0.5, 0.5, 0.7, 0.8],  // 46: Heart
+];
+
+// Per-form fill scale at reveal — normalizes apparent size so each form fills the
+// canvas. Flat/disk forms scale up; tall forms stay ~1.0 to avoid clipping height.
+const ART_FILL = [
+    1.10, // 0  Living Cell
+    1.20, // 1  Golden Torus
+    1.00, // 2  Double Helix (tall)
+    1.15, // 3  Spiral Galaxy
+    1.15, // 4  Lissajous Ribbon
+    1.00, // 5  Monolith (tall)
+    1.10, // 6  Hollow Shell
+    1.00, // 7  Wormhole (tall)
+    1.25, // 8  Lemniscate (flat)
+    1.00, // 9  Hourglass (tall)
+    1.15, // 10 Stellated Star
+    1.20, // 11 Orbital Shells
+    1.15, // 12 Supernova
+    1.20, // 13 Möbius Strip (flat)
+    1.15, // 14 Neural Clusters
+    1.15, // 15 Nebula Cloud
+    1.20, // 16 Accretion Disk
+    1.20, // 17 Barred Galaxy
+    1.25, // 18 Protoplanetary Disk
+    1.05, // 19 Cosmic Web
+    1.00, // 20 Aurora Veil (tall)
+    // GAIA · Flora
+    1.00, // 21 World Tree (tall)
+    1.20, // 22 Lotus
+    1.15, // 23 Koru
+    1.10, // 24 Dandelion
+    1.00, // 25 Vine (tall)
+    // GAIA · Fauna
+    1.00, // 26 Jellyfish (tall)
+    1.05, // 27 Murmuration
+    1.15, // 28 Butterfly (wide)
+    1.15, // 29 Nautilus
+    1.10, // 30 Coral
+    1.10, // 31 Peacock
+    // GAIA · Elements
+    1.00, // 32 Flame (tall)
+    1.15, // 33 Maelstrom
+    1.10, // 34 Cresting Wave
+    1.00, // 35 Lightning (tall)
+    1.00, // 36 Tornado (tall)
+    // GAIA · Structure
+    1.15, // 37 Snowflake (flat)
+    1.10, // 38 Geode
+    1.20, // 39 Mandala (flat)
+    1.15, // 40 Labyrinth (flat)
+    1.00, // 41 Cathedral (tall)
+    // GAIA · Soul & Emergence
+    1.10, // 42 Lorenz Attractor
+    1.10, // 43 Aizawa Attractor
+    1.05, // 44 Phoenix
+    1.20, // 45 Eye (flat)
+    1.10, // 46 Heart
 ];
 
 function getArtIndex() {
@@ -332,6 +475,7 @@ function initThree() {
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(PARTICLE_COUNT * 3);
     const randoms = new Float32Array(PARTICLE_COUNT);
+    const scatter = new Float32Array(PARTICLE_COUNT); // second per-particle random for the new cosmic forms
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
         const r = 200 * Math.cbrt(Math.random());
@@ -341,10 +485,12 @@ function initThree() {
         positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
         positions[i * 3 + 2] = r * Math.cos(phi);
         randoms[i] = Math.random();
+        scatter[i] = Math.random();
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1));
+    geometry.setAttribute('aScatter', new THREE.BufferAttribute(scatter, 1));
 
     customMaterial = new THREE.ShaderMaterial({
         uniforms: {
@@ -380,6 +526,7 @@ function initThree() {
             uniform float uTwist;
 
             attribute float aRandom;
+            attribute float aScatter;
             varying float vRandom;
             varying float vDepth;
 
@@ -396,152 +543,656 @@ function initThree() {
                                mix(dot(hash(i+vec3(0,1,1)),f-vec3(0,1,1)),dot(hash(i+vec3(1,1,1)),f-vec3(1,1,1)),u.x),u.y),u.z);
             }
 
-            // --- 15 Bespoke Living Art Forms (scaled up 1.5-2x) ---
+            // Tilt a disk-plane point about the X axis (for oblique disks)
+            vec3 inclineDisk(vec3 p, float a) {
+                float c = cos(a), s = sin(a);
+                return vec3(p.x, p.y*c - p.z*s, p.y*s + p.z*c);
+            }
+
+            // --- 21 Bespoke Living Art Forms — volumetric, normalized scale ---
             vec3 getShape(int idx, vec3 basePos, float rand) {
                 vec3 n = normalize(basePos);
                 float theta = atan(n.z, n.x);
                 float phi = asin(n.y);
                 float r = length(basePos);
                 float t = uTime;
+                // Two independent per-particle randoms -> real 3D volume (not 1D wires)
+                float r1 = aRandom, r2 = aScatter;
+                vec3 rv  = hash(vec3(r1*167.0, r2*97.0, 23.0));   // [-1,1]^3
+                vec3 rv2 = hash(vec3(r2*131.0, r1*61.0, 7.0));    // [-1,1]^3
+                float ra = rv.x*0.5+0.5, rb = rv.y*0.5+0.5, rc = rv.z*0.5+0.5;
 
-                // 0: Living Cell — amoeba-like pulsing surface
+                // 0: Living Cell — organic volumetric sphere
                 if (idx == 0) {
-                    float surface = 280.0 + 50.0 * noise(n * 2.0 + t * 0.08);
-                    return n * surface;
+                    float surface = 235.0 + 55.0 * noise(n * 1.8 + t * 0.07);
+                    return n * surface * (0.86 + 0.14 * rc);
                 }
 
-                // 1: Golden Torus — particles orbit along the ring
+                // 1: Golden Torus — solid donut, near face-on so the ring hole is clear
                 if (idx == 1) {
-                    float a = theta + t * 0.04 * (0.5 + rand * 0.5);
-                    float R = 240.0;
-                    float rad = 80.0 + 15.0 * sin(a * 3.0 + t * 0.1);
-                    float p = phi + t * 0.05;
-                    return vec3((R + rad*cos(p))*cos(a), rad*sin(p), (R + rad*cos(p))*sin(a));
+                    float a = ra * 6.2831 + t * 0.04;
+                    float b = rb * 6.2831;
+                    float R = 200.0;
+                    float rt = 66.0 * sqrt(rc);
+                    vec3 p = vec3((R + rt*cos(b))*cos(a), rt*sin(b), (R + rt*cos(b))*sin(a));
+                    return inclineDisk(p, 1.45);
                 }
 
-                // 2: Double Helix — two intertwined strands
+                // 2: Double Helix — two solid intertwined strands
                 if (idx == 2) {
-                    float strand = step(0.5, fract(rand * 7.0)) * 2.0 - 1.0;
-                    float along = (rand - 0.5) * 2.0;
-                    float twist = along * 6.0 + t * 0.08;
-                    return vec3(100.0 * cos(twist) * strand, along * 400.0, 100.0 * sin(twist) * strand) + n * 15.0;
+                    float along = ra;
+                    float strand = step(0.5, rb);
+                    float yy = (along - 0.5) * 470.0;
+                    float ang = along * 9.0 + t * 0.06 + strand * 3.14159;
+                    float helR = 95.0;
+                    vec3 c = vec3(cos(ang)*helR, yy, sin(ang)*helR);
+                    return c + rv2 * 17.0;
                 }
 
-                // 3: Spiral Galaxy — three logarithmic arms
+                // 3: Spiral Galaxy — dense tilted spiral disk
                 if (idx == 3) {
-                    float arm = floor(rand * 3.0);
-                    float along = fract(rand * 3.0);
-                    float dist = 20.0 + along * 300.0;
-                    float angle = along * 3.0 + arm * 2.094 + t * 0.015;
-                    float height = (noise(vec3(rand * 10.0, t * 0.04, 0.0)) - 0.5) * 30.0 * (1.0 - along);
-                    return vec3(dist * cos(angle), height, dist * sin(angle));
+                    float radius = 32.0 + pow(ra, 0.8) * 285.0;
+                    float ph = rb * 6.2831;
+                    float armPhase = ph * 2.0 - log(radius / 32.0) * 4.4;
+                    ph -= sin(armPhase) * 0.18;
+                    float ang = ph + t * 0.02;
+                    float thick = mix(38.0, 8.0, clamp(radius / 200.0, 0.0, 1.0));
+                    vec3 p = vec3(radius*cos(ang), (rc - 0.5) * thick, radius*sin(ang));
+                    return inclineDisk(p, 0.55);
                 }
 
-                // 4: Lissajous Ribbon — 3D flowing curves
+                // 4: Lissajous Ribbon — thick flowing 3D ribbon
                 if (idx == 4) {
-                    float s = rand * 6.283 * 3.0;
-                    return vec3(sin(s*2.0 + t*0.05)*260.0, cos(s*3.0 + t*0.06)*200.0, sin(s*5.0 + t*0.035)*150.0) + n * 12.0;
+                    float s = ra * 6.283 * 2.0;
+                    vec3 c = vec3(sin(s*2.0 + t*0.05)*235.0, cos(s*3.0 + t*0.06)*180.0, sin(s*5.0 + t*0.035)*150.0);
+                    return c + rv2 * 24.0;
                 }
 
-                // 5: Monolith — crystalline rectangular pillar
+                // 5: Monolith — solid pillar with a living traveling shimmer
                 if (idx == 5) {
-                    float fx = (fract(rand*5.0) - 0.5) * 2.0;
-                    float fy = (fract(rand*7.0) - 0.5) * 2.0;
-                    float fz = (fract(rand*11.0) - 0.5) * 2.0;
-                    float breathe = 1.0 + 0.015 * sin(t * 0.15 + fy * 3.0);
-                    return vec3(fx * 80.0, fy * 350.0, fz * 80.0) * breathe;
+                    vec3 box = vec3((ra - 0.5) * 130.0, (rb - 0.5) * 430.0, (rc - 0.5) * 130.0);
+                    float wave = sin(box.y * 0.022 - t * 0.9);   // pulse travels up the pillar
+                    box.x *= 1.0 + wave * 0.06;
+                    box.z *= 1.0 + wave * 0.06;
+                    box.x += box.y * sin(t * 0.25) * 0.05;       // slow sway
+                    return box;
                 }
 
-                // 6: Hollow Shell — particles orbit a hollow sphere
+                // 6: Hollow Shell — gyroscopic cage of great-circle rings (clearly hollow)
                 if (idx == 6) {
-                    float shellR = 280.0 + 35.0 * sin(theta * 4.0 + t * 0.07);
-                    float orbit = theta + t * 0.025 * (0.7 + rand * 0.6);
-                    float p = phi + t * 0.015;
-                    return vec3(shellR*sin(p)*cos(orbit), shellR*cos(p), shellR*sin(p)*sin(orbit));
+                    float R = 265.0;
+                    float ring = floor(ra * 5.0);                 // 5 rings, each on its own plane
+                    float ang = rb * 6.2831 + t * 0.02;
+                    vec3 base = vec3(cos(ang) * R, sin(ang) * R, 0.0);
+                    float ax = ring * 1.05, az = ring * 0.62;
+                    base = vec3(base.x, base.y*cos(ax) - base.z*sin(ax), base.y*sin(ax) + base.z*cos(ax));
+                    base = vec3(base.x*cos(az) - base.y*sin(az), base.x*sin(az) + base.y*cos(az), base.z);
+                    return base + rv2 * 7.0;
                 }
 
-                // 7: Wormhole — curved tube through space
+                // 7: Wormhole — flared funnel tunnel with a narrow throat
                 if (idx == 7) {
-                    float along = (rand - 0.5) * 2.0;
-                    float tubeR = 55.0 + 40.0 * cos(along * 3.0);
-                    float angle = fract(rand*13.0) * 6.283 + t * 0.035;
-                    float cx = sin(along*1.5 + t*0.02) * 60.0;
-                    float cz = cos(along*1.5 + t*0.02) * 60.0;
-                    return vec3(cx + tubeR*cos(angle), along * 320.0, cz + tubeR*sin(angle));
+                    float along = ra;
+                    float prof = abs(along - 0.5) * 2.0;
+                    float tubeR = 38.0 + pow(prof, 1.6) * 215.0;
+                    float ang = rb * 6.2831 + along * 6.0 + t * 0.05;
+                    float yy = (along - 0.5) * 430.0;
+                    vec3 p = vec3(tubeR*cos(ang), yy, tubeR*sin(ang));
+                    p += rv2 * (4.0 + prof * 9.0);
+                    return inclineDisk(p, 0.95);
                 }
 
-                // 8: Lemniscate — figure-eight in 3D space
+                // 8: Lemniscate — thick figure-eight tube
                 if (idx == 8) {
-                    float s = rand * 6.283 + t * 0.025;
-                    float scale = 260.0;
+                    float s = ra * 6.283 + t * 0.025;
                     float denom = 1.0 + sin(s)*sin(s);
-                    float x = scale * cos(s) / denom;
-                    float y = scale * sin(s) * cos(s) / denom;
-                    float z = (fract(rand*9.0) - 0.5) * 80.0;
-                    return vec3(x, y, z) + n * 15.0;
+                    vec3 c = vec3(250.0*cos(s)/denom, 250.0*sin(s)*cos(s)/denom, 0.0);
+                    return c + rv2 * 30.0;
                 }
 
-                // 9: Hourglass — hyperboloid with narrow waist
+                // 9: Hourglass — solid hyperboloid of revolution
                 if (idx == 9) {
-                    float y = (rand - 0.5) * 500.0;
-                    float waist = 30.0 + pow(abs(y)/250.0, 1.6) * 170.0;
-                    float angle = fract(rand*13.0) * 6.283 + t * 0.018;
-                    float breathe = 1.0 + 0.02 * sin(t*0.12 + y*0.004);
-                    return vec3(waist*cos(angle), y, waist*sin(angle)) * breathe;
+                    float y = (ra - 0.5) * 470.0;
+                    float waist = 35.0 + pow(abs(y)/235.0, 1.7) * 155.0;
+                    float angle = rb * 6.283 + t * 0.018;
+                    float rr = waist * (0.5 + 0.5 * rc);
+                    return vec3(rr*cos(angle), y, rr*sin(angle)) * (1.0 + 0.02*sin(t*0.12 + y*0.004));
                 }
 
-                // 10: Stellated Star — spikes via golden angle
+                // 10: Stellated Star — solid faceted star: bold points around a dense core
                 if (idx == 10) {
-                    float spikeId = floor(rand * 12.0);
+                    if (rc < 0.28) { return n * (55.0 + 55.0 * (rc / 0.28)) * (0.9 + 0.1 * ra); } // solid core body
+                    float spikeId = floor(ra * 10.0);            // 10 bold points
                     float ga1 = spikeId * 2.399;
-                    float ga2 = acos(1.0 - 2.0*(spikeId + 0.5)/12.0);
-                    vec3 spikeDir = vec3(sin(ga2)*cos(ga1), cos(ga2), sin(ga2)*sin(ga1));
-                    float along = fract(rand * 12.0);
-                    float spikeLen = 100.0 + along * 250.0;
-                    float spread = (1.0 - along) * 50.0;
+                    float ga2 = acos(1.0 - 2.0*(spikeId + 0.5)/10.0);
+                    vec3 dir = vec3(sin(ga2)*cos(ga1), cos(ga2), sin(ga2)*sin(ga1));
+                    float along = rb;
+                    float len = 70.0 + along * 250.0;
                     float pulse = 1.0 + 0.04 * sin(t*0.12 + spikeId);
-                    return spikeDir * spikeLen * pulse + n * spread;
+                    return dir * len * pulse + rv2 * (1.0 - along) * 62.0;  // fat base, sharp tip
                 }
 
-                // 11: Orbital Shells — concentric breathing shells
+                // 11: Orbital Shells — nested orbital rings on varied planes
                 if (idx == 11) {
-                    float shell = floor(rand * 5.0);
-                    float shellR = 80.0 + shell * 60.0 + 8.0*sin(t*0.08 + shell*1.5);
-                    float orbit = theta + t * 0.018 * (1.0 + shell*0.2);
-                    float p = phi + t * 0.01;
-                    return vec3(shellR*sin(p)*cos(orbit), shellR*cos(p), shellR*sin(p)*sin(orbit));
+                    float shell = floor(ra * 5.0);
+                    float R = 80.0 + shell * 52.0;
+                    float ang = rb * 6.2831 + t * 0.025 * (1.0 + shell * 0.3);
+                    float tx = shell * 1.05, tz = shell * 0.7;
+                    vec3 p = vec3(R*cos(ang), 0.0, R*sin(ang));
+                    p = vec3(p.x, p.y*cos(tx) - p.z*sin(tx), p.y*sin(tx) + p.z*cos(tx));
+                    p = vec3(p.x*cos(tz) - p.y*sin(tz), p.x*sin(tz) + p.y*cos(tz), p.z);
+                    return p + rv2 * 9.0;
                 }
 
-                // 12: Supernova — radial jets
+                // 12: Supernova — radial jets bursting outward
                 if (idx == 12) {
-                    float jetId = floor(rand * 8.0);
+                    float jetId = floor(ra * 40.0);
                     float ja1 = jetId * 2.399 + 0.5;
-                    float ja2 = acos(1.0 - 2.0*(jetId+0.5)/8.0);
-                    vec3 jetDir = vec3(sin(ja2)*cos(ja1), cos(ja2), sin(ja2)*sin(ja1));
-                    float along = fract(rand * 8.0);
-                    float jetLen = along * 400.0 + 30.0;
-                    float spread = (1.0 - along*along) * 20.0;
+                    float ja2 = acos(1.0 - 2.0*(jetId+0.5)/40.0);
+                    vec3 dir = vec3(sin(ja2)*cos(ja1), cos(ja2), sin(ja2)*sin(ja1));
+                    float along = rb;
+                    float len = along * 300.0 + 25.0;
                     float pulse = 1.0 + 0.035*sin(t*0.1 + jetId*0.8);
-                    return jetDir * jetLen * pulse + n * spread;
+                    return dir * len * pulse + rv2 * (1.0 - along*along) * 28.0;
                 }
 
-                // 13: Möbius Strip — single-surface loop
+                // 13: Möbius Strip — wide single-surface band with a clear half-twist
                 if (idx == 13) {
-                    float u = rand * 6.283;
-                    float v = (fract(rand*9.0) - 0.5) * 100.0;
-                    float halfU = u*0.5 + t*0.02;
-                    float x = (260.0 + v*cos(halfU)) * cos(u + t*0.018);
-                    float y = (260.0 + v*cos(halfU)) * sin(u + t*0.018);
+                    float u = ra * 6.283;
+                    float v = (rb - 0.5) * 190.0;
+                    float halfU = u*0.5 + t*0.015;
+                    float R = 170.0;
+                    float x = (R + v*cos(halfU)) * cos(u);
+                    float y = (R + v*cos(halfU)) * sin(u);
                     float z = v * sin(halfU);
-                    return vec3(x, z, y);
+                    return inclineDisk(vec3(x, z, y), 0.62) + rv2 * 4.0;
                 }
 
-                // 14: Neural Clusters — drifting connected nodes
+                // 14: Neural Clusters — compact, brain-like sphere of soft nodes + short links
                 if (idx == 14) {
-                    float clusterId = floor(rand * 7.0);
-                    vec3 center = vec3(sin(clusterId*3.7)*220.0, cos(clusterId*5.3)*220.0, sin(clusterId*7.1)*220.0);
-                    center += vec3(sin(t*0.04+clusterId)*20.0, cos(t*0.03+clusterId*2.0)*20.0, sin(t*0.05+clusterId*3.0)*20.0);
-                    return center + n * 50.0 * fract(rand * 7.0);
+                    float cId = floor(ra * 10.0);
+                    float gy = acos(1.0 - 2.0*(cId+0.5)/10.0), gx = cId * 2.399;
+                    vec3 c1 = vec3(sin(gy)*cos(gx), cos(gy), sin(gy)*sin(gx)) * 150.0;
+                    c1 += vec3(sin(t*0.05+cId)*14.0, cos(t*0.04+cId*2.0)*14.0, sin(t*0.06+cId*3.0)*14.0);
+                    if (rc > 0.45) { return c1 + rv * 42.0; }          // soft round cloud nodes
+                    float cId2 = mod(cId + 1.0 + floor(rb*4.0), 10.0);
+                    float gy2 = acos(1.0 - 2.0*(cId2+0.5)/10.0), gx2 = cId2 * 2.399;
+                    vec3 c2 = vec3(sin(gy2)*cos(gx2), cos(gy2), sin(gy2)*sin(gx2)) * 150.0;
+                    return mix(c1, c2, rb) + rv2 * 8.0;                 // short straight links
+                }
+
+                // ===== COSMIC FORMS =====
+
+                // 15: Nebula Cloud — bright condensation cores with long wispy tendrils
+                if (idx == 15) {
+                    float lobeId = floor(ra * 6.0);
+                    float la = lobeId * 1.05 + noise(vec3(lobeId*2.7, 0.5, 0.3)) * 1.8;
+                    float ld = 60.0 + noise(vec3(lobeId*2.1, 0.5, 0.3)) * 120.0;
+                    vec3 lc = vec3(cos(la)*ld, sin(lobeId*2.3 + t*0.009)*70.0, sin(la)*ld);
+                    float spread = mix(8.0, 225.0, pow(rb, 2.2));      // dense core -> wispy edge
+                    vec3 flow = vec3(noise(lc*0.01 + t*0.03), noise(lc*0.01 + vec3(7.0) + t*0.03), noise(lc*0.01 + vec3(13.0) + t*0.03));
+                    return lc + normalize(rv + flow * 0.8) * spread;
+                }
+
+                // 16: Accretion Disk — blazing tilted disk
+                if (idx == 16) {
+                    float radius = 30.0 + pow(ra, 0.7) * 270.0;
+                    float ang = rb * 6.283 + t * mix(0.06, 0.012, ra);
+                    float thick = mix(20.0, 4.0, clamp(radius/200.0, 0.0, 1.0));
+                    vec3 p = vec3(radius*cos(ang), (rc - 0.5) * thick, radius*sin(ang));
+                    return inclineDisk(p, 0.80);
+                }
+
+                // 17: Barred Galaxy — straight bar with two arms from its ends
+                if (idx == 17) {
+                    vec3 p;
+                    if (rc < 0.5) {
+                        float bx = (ra - 0.5) * 320.0;
+                        float taper = 1.0 - abs(bx) / 185.0;
+                        p = vec3(bx, (rb - 0.5) * 14.0, rv2.x * 18.0 * taper);
+                    } else {
+                        float arm = step(0.5, rb);
+                        float s = ra;
+                        float ang0 = arm > 0.5 ? 0.0 : 3.14159;
+                        float ang = ang0 + s * 2.2 + t * 0.01;
+                        float rad = 155.0 + s * 150.0;
+                        p = vec3(rad*cos(ang), (rc - 0.5) * 12.0 * (1.0 - s), rad*sin(ang)) + rv2 * 7.0;
+                    }
+                    return inclineDisk(p, 1.28);
+                }
+
+                // 18: Protoplanetary Disk — concentric rings with gaps
+                if (idx == 18) {
+                    float ringId = floor(ra * 5.0);
+                    float ringR = 60.0 + ringId * 56.0 + (rc - 0.5) * 18.0;
+                    float ang = rb * 6.283 + t * mix(0.04, 0.008, ringId/4.0);
+                    vec3 p = vec3(ringR*cos(ang), rv2.y * 9.0, ringR*sin(ang));
+                    return inclineDisk(p, 1.32);
+                }
+
+                // 19: Cosmic Web — bright nodes linked by clean filaments
+                if (idx == 19) {
+                    float nid = floor(ra * 6.0);
+                    vec3 na = vec3(sin(nid*2.3)*210.0, cos(nid*1.7)*180.0, sin(nid*3.1)*200.0);
+                    na += vec3(sin(t*0.013+nid)*14.0, cos(t*0.011+nid*2.0)*14.0, sin(t*0.015+nid*3.0)*14.0);
+                    if (rc > 0.62) { return na + rv2 * 32.0; }
+                    float nid2 = mod(nid + 1.0 + floor(rb*2.0), 6.0);
+                    vec3 nb = vec3(sin(nid2*2.3)*210.0, cos(nid2*1.7)*180.0, sin(nid2*3.1)*200.0);
+                    float tl = rb;
+                    return mix(na, nb, tl) + rv2 * 9.0 * sin(tl*3.14159);
+                }
+
+                // 20: Aurora Veil — tall draping curtains of rippling light
+                if (idx == 20) {
+                    float curtainId = floor(ra * 6.0);
+                    float vY = rb;                                   // 0 bottom .. 1 top
+                    float yPos = (vY - 0.5) * 470.0;
+                    float xBase = (curtainId - 2.5) * 82.0;
+                    float ripple = sin(yPos*0.012 + curtainId*1.4 + t*0.06)*72.0
+                                 + sin(yPos*0.028 + t*0.045 + curtainId*0.9)*34.0;
+                    float zPos = sin(curtainId*2.2 + t*0.02)*90.0;
+                    float spreadX = mix(8.0, 44.0, vY);             // narrow bright base -> diffuse top
+                    return vec3(xBase + ripple + (rc - 0.5)*spreadX, yPos, zPos + rv2.z*18.0);
+                }
+
+                // ===== GAIA · FLORA =====
+
+                // 21: World Tree — roots, trunk, and a broad canopy
+                if (idx == 21) {
+                    if (rc < 0.55) {
+                        vec3 c = n * (60.0 + 120.0 * pow(ra, 0.5));      // rounded foliage canopy
+                        return vec3(c.x, c.y * 0.8 + 205.0, c.z) + rv2 * 8.0;
+                    }
+                    if (rc < 0.72) {
+                        float br = floor(ra * 6.0);                      // roots fanning down
+                        float s = rb;
+                        float rad = s * 155.0;
+                        return vec3(cos(br*1.05)*rad, -55.0 - s*185.0, sin(br*1.05)*rad) + rv2 * 7.0;
+                    }
+                    float s = rb;                                        // trunk + diverging branches
+                    float br = floor(ra * 5.0);
+                    float rad = smoothstep(0.45, 1.0, s) * 85.0 * ra;
+                    return vec3(cos(br*1.256)*rad, -55.0 + s*265.0, sin(br*1.256)*rad) + rv2 * (5.0 + rad*0.05);
+                }
+
+                // 22: Lotus — a cupped bloom: inner petals upright, outer petals opening out
+                if (idx == 22) {
+                    float petals = 8.0;
+                    float tier = floor(ra * 4.0);
+                    float tierF = tier / 3.0;                       // 0 inner .. 1 outer
+                    float pid = floor(rb * petals);
+                    float pa = (pid + 0.5)/petals * 6.2831 + tier * 0.4;
+                    float along = rc;                               // 0 base .. 1 tip
+                    float w = (fract(rb * petals) - 0.5) * 2.0;
+                    float elev = mix(1.25, 0.22, tierF) - along*along*0.45;  // upright->open, tip bends out
+                    float petalLen = 120.0 + tierF * 125.0;
+                    float r = along * petalLen;
+                    float rad = r * cos(elev);
+                    float y = r * sin(elev) - 25.0;
+                    float width = pow(sin(along * 3.14159), 0.55) * (54.0 - tier * 5.0);  // broad rounded petal
+                    vec3 radial = vec3(cos(pa), 0.0, sin(pa));
+                    vec3 tang = vec3(-sin(pa), 0.0, cos(pa));
+                    return radial * rad + tang * (w * width) + vec3(0.0, y, 0.0) + rv2 * 4.0;
+                }
+
+                // 23: Koru — an unfurling fern spiral
+                if (idx == 23) {
+                    float s = ra;
+                    float ang = s * 3.5 * 6.2831 + t * 0.04;
+                    float rad = pow(1.0 - s, 1.3) * 300.0 + 10.0;
+                    vec3 spine = vec3(cos(ang)*rad, sin(ang)*rad, 0.0);
+                    spine += normalize(spine + vec3(0.001)) * (rb - 0.5) * 32.0 * (0.3 + 0.7 * s);
+                    spine.z += (rc - 0.5) * 22.0;
+                    return inclineDisk(spine, 0.5) + rv2 * 4.0;
+                }
+
+                // 24: Dandelion — a sphere of seed-stalks, some drifting free
+                if (idx == 24) {
+                    float R = 230.0;
+                    if (rc > 0.88) {
+                        float drift = (rc - 0.88) / 0.12;
+                        return n * R + vec3(1.0, 0.3, 0.2) * drift * 260.0 + rv * drift * 40.0 + rv2 * 3.0;
+                    }
+                    return n * (rb * R) + rv * smoothstep(0.82, 1.0, rb) * 22.0 + rv2 * 2.0;
+                }
+
+                // 25: Vine — climbing tendrils winding upward, leaves sprouting
+                if (idx == 25) {
+                    float strand = floor(ra * 4.0);
+                    float s = rb;
+                    float climb = s * 9.0 + strand * 1.57 + t * 0.05;
+                    float rad = 72.0 + sin(s * 6.2831 + strand) * 26.0;
+                    vec3 p = vec3(cos(climb)*rad, (s - 0.5) * 460.0, sin(climb)*rad);
+                    if (rc > 0.7) {
+                        vec3 tang = vec3(-sin(climb), 0.3, cos(climb));
+                        p += normalize(tang + rv * 0.5) * ((rc - 0.7)/0.3) * 45.0;
+                    }
+                    return p + rv2 * 4.0;
+                }
+
+                // ===== GAIA · FAUNA =====
+
+                // 26: Jellyfish — pulsing bell with trailing tentacles
+                if (idx == 26) {
+                    if (rc < 0.5) {
+                        float pol = rb * 1.5708;
+                        float az = ra * 6.2831;
+                        float R = 150.0 * (1.0 + 0.12 * sin(t * 0.8));
+                        float bellR = R * sin(pol) * (1.0 + 0.3 * pow(sin(pol), 3.0));
+                        return vec3(bellR*cos(az), R*cos(pol)*0.8 + 45.0, bellR*sin(az)) + rv2 * 4.0;
+                    }
+                    float tent = floor(ra * 12.0);
+                    float s = rb;
+                    float tAng = tent/12.0 * 6.2831;
+                    float wav = sin(s*5.0 + t*0.6 + tent) * 42.0 * s;
+                    return vec3(cos(tAng)*120.0 + wav, 45.0 - s*330.0, sin(tAng)*120.0 + cos(t*0.5+tent)*22.0*s) + rv2 * 4.0;
+                }
+
+                // 27: Murmuration — a swooping flock: dense leading edge, dispersing tail
+                if (idx == 27) {
+                    float s = pow(ra, 0.65);                        // 0 dense head .. 1 wispy tail
+                    float ang = s * 3.4 + t * 0.12;
+                    float rad = 70.0 + s * 200.0;
+                    vec3 path = vec3(cos(ang)*rad, (s-0.4)*150.0 + sin(s*7.0 + t*0.3)*45.0, sin(ang)*rad);
+                    float spread = mix(24.0, 145.0, s);            // tight head -> dispersing tail
+                    vec3 turb = vec3(noise(path*0.012 + t*0.06), noise(path*0.012 + vec3(9.0) + t*0.06), noise(path*0.012 + vec3(19.0) + t*0.06));
+                    return path + (rv + turb*0.8) * spread + rv2 * 6.0;
+                }
+
+                // 28: Butterfly — body, antennae, and four shaped wings that flap
+                if (idx == 28) {
+                    if (rc < 0.08) { return vec3(0.0, (rb-0.5)*250.0, 0.0) + rv2 * 5.0; }   // body
+                    if (rc < 0.115) {                                                       // antennae
+                        float sideA = step(0.5, ra)*2.0 - 1.0;
+                        return vec3(sideA*rb*45.0, 135.0 + rb*70.0, 0.0) + rv2 * 3.0;
+                    }
+                    float side = step(0.5, ra) * 2.0 - 1.0;
+                    float wing = step(0.5, rb);
+                    float a = fract(ra * 2.0);
+                    float fill = sqrt(rc);
+                    float prof = 0.5 + 0.5*sin(a*3.14159);          // rounded wing edge
+                    vec2 wpt;
+                    if (wing < 0.5) {                               // forewing: up-and-out lobe
+                        float th = mix(0.30, 1.50, a);
+                        float rr = (135.0 + 135.0*prof) * fill;
+                        wpt = vec2(cos(th)*rr, sin(th)*rr) + vec2(14.0, 28.0);
+                    } else {                                        // hindwing: down-and-out lobe
+                        float th = mix(-0.18, -1.45, a);
+                        float rr = (105.0 + 100.0*prof) * fill;
+                        wpt = vec2(cos(th)*rr, sin(th)*rr) + vec2(8.0, -34.0);
+                    }
+                    float flap = sin(t * 1.3) * 0.7;
+                    return vec3(side*wpt.x, wpt.y, side*wpt.x*flap*0.45) + rv2 * 4.0;
+                }
+
+                // 29: Nautilus — a chambered logarithmic shell
+                if (idx == 29) {
+                    float s = ra;
+                    float ang = s * 3.2 * 6.2831 + t * 0.02;
+                    float rad = pow(s, 1.3) * 290.0 + 8.0;
+                    float wall = 8.0 + s * 55.0;
+                    vec3 sp = vec3(cos(ang)*rad, sin(ang)*rad, 0.0);
+                    vec3 outward = normalize(sp + vec3(0.001));
+                    sp += outward * (rb - 0.5) * wall + vec3(0.0, 0.0, (rc - 0.5) * wall);
+                    return inclineDisk(sp, 0.4) + rv2 * 4.0;
+                }
+
+                // 30: Coral — many stalks spreading from the base, each forking (staghorn)
+                if (idx == 30) {
+                    float s = rb;
+                    float baseBranch = floor(ra * 7.0);              // 7 main stalks
+                    float bd = baseBranch * 0.92;
+                    vec3 dir = normalize(vec3(cos(bd)*0.85, 0.7, sin(bd)*0.85));   // fan outward + up
+                    vec3 pos = vec3(cos(bd), 0.0, sin(bd)) * 28.0 + vec3(0.0, -95.0, 0.0);
+                    float total = s * 4.0;
+                    for (int k = 0; k < 4; k++) {
+                        if (float(k) >= total) break;
+                        float frac = clamp(total - float(k), 0.0, 1.0);
+                        pos += dir * (80.0 * pow(0.8, float(k))) * frac;
+                        float d = fract(ra * (5.3 + float(k)*9.7) + baseBranch) * 6.2831;
+                        vec3 perp = vec3(cos(d), 0.0, sin(d));
+                        dir = normalize(dir * 0.55 + (perp + vec3(0.0, 0.35, 0.0)) * 0.45);
+                    }
+                    return pos + rv2 * mix(15.0, 4.0, s);            // knobby base, fine tips
+                }
+
+                // 31: Peacock — broad fan of feathers, each tipped with an eye
+                if (idx == 31) {
+                    if (rc < 0.07) { return vec3(0.0, -150.0 + rb*90.0, rb*25.0) + rv2 * 5.0; }  // body/neck
+                    float feather = floor(ra * 30.0);
+                    float s = rb;
+                    float fSpread = feather/30.0 - 0.5;
+                    float fan = fSpread * 3.0;                         // ~170-degree fan
+                    float len = 330.0 * (1.0 - abs(fSpread)*0.4);
+                    float xx = sin(fan) * s * len;
+                    float yy = cos(fan*0.45) * s * len;
+                    float eye = smoothstep(0.80, 1.0, s);
+                    xx += rv.x * 30.0 * eye;                           // round eye-spot at the tip
+                    yy += rv.y * 30.0 * eye;
+                    xx += cos(fan + 1.5708) * (rc - 0.5) * sin(s*3.14159) * 18.0 * (1.0 - eye);  // barbs
+                    return vec3(xx, yy - 150.0, sin(fan)*30.0*s + (rc - 0.5)*6.0) + rv2 * 3.0;
+                }
+
+                // ===== GAIA · ELEMENTS =====
+
+                // 32: Flame — wide rounded base tapering to flickering upward tongues
+                if (idx == 32) {
+                    float s = pow(rb, 0.75);
+                    float ang = ra * 6.2831;
+                    float w = sqrt(max(0.0, 1.0 - s)) * (0.55 + 0.45*(1.0 - s)) * 125.0;  // teardrop
+                    float rad = w * sqrt(rc);
+                    float fl = mix(7.0, 52.0, s);                  // modest flicker, doesn't fatten the tip
+                    float fx = (noise(vec3(cos(ang)*2.0, s*4.0 - t*1.4, sin(ang)*2.0)) - 0.5) * fl;
+                    float fz = (noise(vec3(sin(ang)*2.0 + 4.0, s*4.0 - t*1.4, cos(ang)*2.0)) - 0.5) * fl;
+                    float tongue = floor(ra * 4.0);                // thin upward licks near the tip
+                    float lickUp = smoothstep(0.6, 1.0, s) * noise(vec3(tongue*3.0, s*3.0 - t*1.5, 0.0)) * 75.0;
+                    return vec3(cos(ang)*rad + fx, s*430.0 - 150.0 + lickUp, sin(ang)*rad + fz) + rv2 * (3.0 + s*4.0);
+                }
+
+                // 33: Maelstrom — a deep spiralling whirlpool funnel with an open throat
+                if (idx == 33) {
+                    float radius = 45.0 + pow(ra, 0.5) * 270.0;
+                    float ang = rb * 6.2831 + log(radius/45.0) * 5.0 + t * (0.18 * 300.0 / radius);
+                    float depth = -pow(1.0 - radius/315.0, 1.6) * 300.0;      // deep cone, empty center
+                    vec3 p = vec3(radius*cos(ang), depth + (rc - 0.5) * 12.0, radius*sin(ang));
+                    return inclineDisk(p, 0.55) + rv2 * 4.0;
+                }
+
+                // 34: Cresting Wave — a curling barrel; crest runs into the screen so the curl faces out
+                if (idx == 34) {
+                    float zc = (ra - 0.5) * 300.0;               // crest length along Z (into screen)
+                    if (rb < 0.45) {
+                        float h = rb / 0.45;                     // rising wave face (wall of water)
+                        return vec3(-h*h*160.0 + (rc - 0.5)*30.0, h*200.0 - 140.0, zc + (rc - 0.5)*45.0) + rv2 * 5.0;
+                    }
+                    float curlT = (rb - 0.45) / 0.55;            // lip curling forward, ~1.7 turns
+                    float curlAng = curlT * 5.4;
+                    float curlR = 95.0 + curlT * 120.0;
+                    float cx = -120.0 - cos(curlAng) * curlR;
+                    float cy = 70.0 + sin(curlAng) * curlR;
+                    float spray = smoothstep(0.82, 1.0, curlT);
+                    return vec3(cx, cy, zc + (rc - 0.5)*24.0) + rv * spray * 80.0 + rv2 * 5.0;
+                }
+
+                // 35: Lightning — a thick jagged main channel with thin angular forks
+                if (idx == 35) {
+                    float branch = floor(ra * 6.0);
+                    float isMain = step(branch, 1.5);              // branches 0,1 = bright main channel
+                    float s = rb;
+                    float seg = floor(s * 7.0);
+                    float segf = fract(s * 7.0);
+                    float xoff = 0.0, zoff = 0.0;
+                    for (int k = 0; k < 7; k++) {                  // stepped random walk -> sharp zigzag
+                        if (float(k) > seg) break;
+                        float amt = (float(k) == seg) ? segf : 1.0;
+                        xoff += (fract(sin(float(k)*12.9 + branch*7.3) * 43758.5) - 0.5) * 70.0 * amt;
+                        zoff += (fract(sin(float(k)*7.7 + branch*3.1) * 23421.6) - 0.5) * 70.0 * amt;
+                    }
+                    float veer = (isMain > 0.5) ? 0.0 : (fract(branch*3.3) - 0.5) * s * s * 280.0;
+                    return vec3(xoff + veer, (0.5 - s) * 470.0, zoff) + rv2 * ((isMain > 0.5) ? 6.0 : 2.5);
+                }
+
+                // 36: Tornado — a towering rotating funnel
+                if (idx == 36) {
+                    float s = rb;
+                    float rad = 20.0 + pow(s, 1.5) * 180.0;
+                    float ang = ra * 6.2831 + s * 6.0 + t * (1.2 - s*0.6);
+                    vec3 p = vec3(cos(ang)*rad*(0.7 + 0.3*rc), (s - 0.5) * 470.0, sin(ang)*rad*(0.7 + 0.3*rc));
+                    if (s < 0.12) {
+                        float da = ra * 6.2831;
+                        p = vec3(cos(da)*(40.0 + rc*120.0), -235.0 + rb*60.0, sin(da)*(40.0 + rc*120.0));
+                    }
+                    p.x += sin(s*3.0 + t*0.5) * 30.0;
+                    return p + rv2 * 4.0;
+                }
+
+                // ===== GAIA · STRUCTURE =====
+
+                // 37: Snowflake — six-fold dendritic ice crystal
+                if (idx == 37) {
+                    float arm = floor(ra * 6.0);
+                    float a0 = arm * 1.0472;
+                    float s = rb;
+                    float node = floor(s * 5.0);
+                    float ndist = (node + 0.5)/5.0 * 270.0;
+                    float bside = step(0.5, fract(rc*2.0))*2.0 - 1.0;
+                    float blen = (1.0 - node/5.0) * 70.0 * fract(rc*9.0);
+                    vec2 pos2;
+                    if (rc < 0.5) { pos2 = vec2(cos(a0), sin(a0)) * (s * 270.0); }
+                    else { pos2 = vec2(cos(a0), sin(a0))*ndist + vec2(cos(a0 + bside*1.047), sin(a0 + bside*1.047))*blen; }
+                    return vec3(pos2.x, pos2.y, (rc - 0.5)*8.0) + rv2 * 3.0;
+                }
+
+                // 38: Geode — rough shell opening to an inner cavity of crystals
+                if (idx == 38) {
+                    if (rc < 0.4) {
+                        vec3 d = n;
+                        d.z = -abs(d.z)*0.7 - d.z*0.3;             // shell biased to the back (open front)
+                        return d * (245.0 + noise(d*4.0)*35.0) + rv2 * 6.0;
+                    }
+                    float cId = floor(ra * 50.0);
+                    vec3 base = normalize(vec3(sin(cId*2.3), cos(cId*1.7), -0.6 - abs(sin(cId*3.1))*0.7));
+                    float along = rb;
+                    float spikeLen = 90.0 + fract(cId*0.37)*110.0;
+                    return base * 235.0 - base * along * spikeLen + rv2 * mix(10.0, 2.0, along);
+                }
+
+                // 39: Mandala — concentric rings of radial motifs
+                if (idx == 39) {
+                    float ring = floor(ra * 6.0);
+                    float ringR = 40.0 + ring * 42.0;
+                    float symmetry = 8.0 + ring * 4.0;
+                    float motif = floor(rb * symmetry);
+                    float mAng = (motif + 0.5)/symmetry * 6.2831 + ring*0.2;
+                    float along = rc;
+                    float pr = ringR + (along - 0.5) * (18.0 + ring*4.0);
+                    float spread = sin(along*3.14159) * (8.0 + ring*2.0);
+                    vec2 base = vec2(cos(mAng), sin(mAng)) * pr;
+                    vec2 perp = vec2(-sin(mAng), cos(mAng)) * (fract(rb*symmetry) - 0.5) * spread * 2.0;
+                    return vec3(base.x + perp.x, base.y + perp.y, (rc - 0.5)*8.0) + rv2 * 2.5;
+                }
+
+                // 40: Labyrinth — concentric circuits with gaps and connectors
+                if (idx == 40) {
+                    float ring = floor(ra * 8.0);
+                    float ringR = 30.0 + ring * 30.0;
+                    float ang = rb * 6.2831;
+                    float gap = ring * 0.8;
+                    float inGap = step(abs(mod(ang - gap + 3.14159, 6.2831) - 3.14159), 0.5);
+                    vec2 pos2 = vec2(cos(ang), sin(ang)) * ringR;
+                    if (inGap > 0.5) { pos2 = vec2(cos(gap), sin(gap)) * (ringR + rc * 30.0); }
+                    return vec3(pos2.x, pos2.y, (rc - 0.5)*10.0) + rv2 * 4.0;
+                }
+
+                // 41: Cathedral — twin towers, a gabled nave, and a rose window
+                if (idx == 41) {
+                    float r = rc;
+                    if (r < 0.4) {                                  // twin towers tapering to spires
+                        float side = step(0.5, ra)*2.0 - 1.0;
+                        float h = rb;
+                        float towerR = mix(45.0, 10.0, smoothstep(0.8, 1.0, h));
+                        float ta = fract(ra*2.0) * 6.2831;
+                        return vec3(side*150.0 + cos(ta)*towerR, h*420.0 - 200.0, sin(ta)*towerR*0.5) + rv2 * 4.0;
+                    }
+                    if (r < 0.78) {                                 // central gabled nave (pointed top)
+                        float x = (fract(ra*3.0) - 0.5) * 220.0;
+                        float maxH = mix(180.0, 360.0, 1.0 - abs(x)/115.0);
+                        return vec3(x, rb*maxH - 200.0, (rc - 0.5)*60.0) + rv2 * 5.0;
+                    }
+                    float wr = sqrt(rb) * 60.0;                     // rose window
+                    float wa = ra * 6.2831;
+                    return vec3(cos(wa)*wr, 120.0 + sin(wa)*wr, 65.0) + rv2 * 3.0;
+                }
+
+                // ===== GAIA · SOUL & EMERGENCE =====
+
+                // 42: Lorenz Attractor — the butterfly of deterministic chaos
+                if (idx == 42) {
+                    vec3 lp = vec3(0.1, 0.0, 0.0) + rv * 0.6;
+                    float steps = 40.0 + ra * 140.0;               // warmup ensures particles fill both lobes
+                    for (int i = 0; i < 180; i++) {
+                        if (float(i) >= steps) break;
+                        float dx = 10.0 * (lp.y - lp.x);
+                        float dy = lp.x * (28.0 - lp.z) - lp.y;
+                        float dz = lp.x * lp.y - 2.6667 * lp.z;
+                        lp += vec3(dx, dy, dz) * 0.006;
+                    }
+                    return vec3(lp.x * 7.0, lp.z * 7.0 - 175.0, lp.y * 7.0) + rv2 * 3.5;
+                }
+
+                // 43: Aizawa Attractor — an orbiting flow around a spindle
+                if (idx == 43) {
+                    vec3 ap = vec3(0.1, 0.0, 0.0) + rv * 0.25;
+                    float steps = 55.0 + ra * 150.0;               // warmup so the orbit spreads, not a blob
+                    for (int i = 0; i < 210; i++) {
+                        if (float(i) >= steps) break;
+                        float dx = (ap.z - 0.7) * ap.x - 3.5 * ap.y;
+                        float dy = 3.5 * ap.x + (ap.z - 0.7) * ap.y;
+                        float dz = 0.6 + 0.95 * ap.z - ap.z*ap.z*ap.z/3.0 - (ap.x*ap.x + ap.y*ap.y)*(1.0 + 0.25*ap.z) + 0.1*ap.z*ap.x*ap.x*ap.x;
+                        ap += vec3(dx, dy, dz) * 0.014;
+                    }
+                    return vec3(ap.x * 155.0, ap.z * 150.0 - 70.0, ap.y * 155.0) + rv2 * 3.0;
+                }
+
+                // 44: Phoenix — a rising firebird, wings spread, ember tail trailing
+                if (idx == 44) {
+                    if (rc < 0.10) { return vec3(0.0, rb*220.0 - 70.0, 0.0) + rv2 * 6.0; }    // body + head
+                    if (rc < 0.66) {                                                          // broad spread wings
+                        float side = step(0.5, ra)*2.0 - 1.0;
+                        float a = fract(ra * 2.0);                 // 0 root .. 1 wingtip
+                        float across = rb - 0.5;                   // across the wing chord
+                        float span = 40.0 + a * 290.0;
+                        float chord = sin(a*3.14159) * 130.0 + 25.0;
+                        float upsweep = a*a * 140.0;               // tips sweep upward
+                        return vec3(side*span, 20.0 + upsweep + across*chord, side*a*55.0) + rv2 * 4.0;
+                    }
+                    float s = (rc - 0.66) / 0.34;                                             // dispersing ember tail
+                    float spread = mix(18.0, 95.0, s);
+                    return vec3(rv.x*spread*0.7, -70.0 - s*250.0 + sin(s*8.0 + t)*18.0, rv.z*spread*0.7) + rv2 * (3.0 + s*5.0);
+                }
+
+                // 45: Eye — radial iris fibers around a dark pupil
+                if (idx == 45) {
+                    if (rc > 0.92) {                                                          // outer limbus ring
+                        float la = ra * 6.2831;
+                        return vec3(cos(la)*228.0, sin(la)*228.0, (rc - 0.5)*6.0) + rv2 * 3.0;
+                    }
+                    float fiber = floor(ra * 80.0);
+                    float fAng = (fiber/80.0)*6.2831 + (fract(ra*80.0) - 0.5)*0.06;
+                    float rr = mix(45.0, 205.0, rb) + sin(rb*8.0 + fiber)*6.0;                // pupil edge -> iris rim
+                    return vec3(cos(fAng)*rr, sin(fAng)*rr, (rc - 0.5)*10.0) + rv2 * 2.5;
+                }
+
+                // 46: Heart — a beating, chambered heart
+                if (idx == 46) {
+                    float th = ra * 6.2831;
+                    float fill = sqrt(rc);
+                    float hx = 16.0*sin(th)*sin(th)*sin(th);
+                    float hy = 13.0*cos(th) - 5.0*cos(2.0*th) - 2.0*cos(3.0*th) - cos(4.0*th);
+                    float pulse = 1.0 + 0.08*sin(t * 2.5);                                    // heartbeat
+                    vec2 pos2 = vec2(hx, hy) * 13.0 * fill * pulse;
+                    float z = (rb - 0.5) * 70.0 * (1.0 - fill*0.5) * pulse;
+                    return vec3(pos2.x, pos2.y + 20.0, z) + rv2 * 4.0;
                 }
 
                 return basePos;
@@ -682,9 +1333,9 @@ function animate() {
 
     // Organic camera orbit on art page — camera focuses left (artOffsetX), putting art on the right
     if (isArtRevealed) {
-        camera.position.x = artOffsetX + Math.sin(t * 0.025) * 30;
-        camera.position.y = Math.sin(t * 0.018) * 15;
-        camera.position.z = 400 + Math.cos(t * 0.022) * 25;
+        camera.position.x = artOffsetX + Math.sin(t * 0.025) * 26;
+        camera.position.y = Math.sin(t * 0.018) * 14;
+        camera.position.z = 460 + Math.cos(t * 0.022) * 22;
         camera.lookAt(artOffsetX, 0, 0);
     }
 
@@ -823,11 +1474,12 @@ function handleAnswer(opt) {
     const primaryColor = getSoulColor();
     const accentColor = getSoulAccentColor();
 
-    gsap.to(customMaterial.uniforms.uChaos, { value: soulState.chaos, duration: 4.0, ease: "sine.inOut" });
-    gsap.to(customMaterial.uniforms.uGravity, { value: soulState.gravity, duration: 4.0, ease: "sine.inOut" });
-    gsap.to(customMaterial.uniforms.uFluidity, { value: soulState.fluidity, duration: 4.0, ease: "sine.inOut" });
-    gsap.to(customMaterial.uniforms.uColorA.value, { r: primaryColor.r, g: primaryColor.g, b: primaryColor.b, duration: 5, ease: "sine.inOut" });
-    gsap.to(customMaterial.uniforms.uColorB.value, { r: accentColor.r, g: accentColor.g, b: accentColor.b, duration: 5, ease: "sine.inOut" });
+    // Slow, elegant morph of the soul state after each answer
+    gsap.to(customMaterial.uniforms.uChaos, { value: soulState.chaos, duration: 6.5, ease: "sine.inOut" });
+    gsap.to(customMaterial.uniforms.uGravity, { value: soulState.gravity, duration: 6.5, ease: "sine.inOut" });
+    gsap.to(customMaterial.uniforms.uFluidity, { value: soulState.fluidity, duration: 6.5, ease: "sine.inOut" });
+    gsap.to(customMaterial.uniforms.uColorA.value, { r: primaryColor.r, g: primaryColor.g, b: primaryColor.b, duration: 7.5, ease: "sine.inOut" });
+    gsap.to(customMaterial.uniforms.uColorB.value, { r: accentColor.r, g: accentColor.g, b: accentColor.b, duration: 7.5, ease: "sine.inOut" });
 
     // Dynamic question panel border color
     document.querySelector('.question-container').style.borderLeftColor = '#' + accentColor.getHexString();
@@ -856,7 +1508,44 @@ const ART_INSIGHTS = [
     "You are comfortable with uncertainty in a way that most people are not. Where others need to collapse possibilities into a single answer, you can hold multiple truths simultaneously. Your orbital shells are not confusion; they are sophisticated tolerance for complexity.",
     "Something has been building inside you for a long time. Pressure, energy, insight — compressed and contained until the moment of release. The supernova is not destruction. It is transformation so rapid and so total that it reshapes everything around it. You are on the edge of that release.",
     "You are endlessly self-referential — not narcissistically, but philosophically. You think about your thinking. You observe your observations. The Möbius strip has only one surface, and so do you: there is no separation between your inner life and your outer expression. What you feel, you become.",
-    "Your mind is a network, not a hierarchy. Ideas cluster around each other, forming constellations of meaning that others might not see. You draw connections between disparate things — a piece of music and a mathematical proof, a childhood memory and a political philosophy. These neural clusters are your unique intelligence."
+    "Your mind is a network, not a hierarchy. Ideas cluster around each other, forming constellations of meaning that others might not see. You draw connections between disparate things — a piece of music and a mathematical proof, a childhood memory and a political philosophy. These neural clusters are your unique intelligence.",
+    "You are a place of creation in permanent motion. Like gas clouds collapsing into stars, your internal chaos is not disorder — it is pre-organization. You hold enormous energy in diffuse form, awaiting the moment of density, of commitment, of collapse into something luminous and defined.",
+    "There is a gravity in you that few understand. It is not dominance — it is inevitability. Things are drawn toward you not because you pull, but because your presence curves the space around you. At your center is something so dense with conviction that light itself bends around the edges of what you know.",
+    "You impose pattern without imposing will. Like a galaxy that grew a spine — a central bar of crystallized purpose — from which arms of exploration radiate outward, you bring structure to the people and systems around you simply by existing with clarity. Your order is not rigid; it is generative.",
+    "You understand patience in a way that others mistake for passivity. Every world that will ever be born is currently waiting in a ring of frozen dust. Your most important things are in formation — rings of intention, of accumulated experience — and the gaps between them are not absence, but necessary space.",
+    "You are the architecture no one built intentionally. Like the cosmic web — the largest structure in existence, invisible yet holding everything together — your connections are vast, non-obvious, and load-bearing. You are the thread between ideas, people, and moments that would otherwise drift apart into void.",
+    "You carry emotion the way the sky carries light — visibly, dramatically, yet without weight. Your inner life is not hidden; it is displayed in wavelengths others are still learning to read. Like the aurora, you are a collision between what you contain and the invisible forces that move through you.",
+    // GAIA · Flora
+    "You understand that nothing real is built quickly. Like a tree, you grew from a single seed of an idea about who you might become, and everything you are now — every branch of thought, every root of conviction — extended from that one quiet origin. What shows above the ground is balanced by everything you have buried beneath it.",
+    "You bloom on your own terms. Where others force themselves open, you wait for the conditions to be right — for the water to still, for the light to soften — and only then do you unfold, layer by deliberate layer. Your serenity is not passivity; it is the discipline of someone who knows the most beautiful things cannot be rushed.",
+    "You live in the space just before arrival. Like the unfurling fern, you are perpetually becoming — never quite finished, never wanting to be. You carry your whole future coiled inside you, releasing it slowly, turn by turn. To others this looks like patience; to you it is simply the pleasure of unfolding.",
+    "You hold everything you love with an open hand. You have learned that the surest way to lose something is to grip it too tightly, so you let your seeds go — your ideas, your people, your past selves — trusting the wind to carry them somewhere they can root. This is not detachment. It is the deepest kind of faith.",
+    "You find your strength by reaching toward others. You do not stand alone like a pillar; you climb, winding around the people and structures near you, and in doing so you lift yourself higher than you ever could in isolation. What looks like dependence is a quiet genius for connection — you grow by holding on.",
+    // GAIA · Fauna
+    "You have mastered the art of moving without forcing. Like the jellyfish, you propel yourself through life not by fighting the current but by pulsing gently with it, trusting drift as much as direction. There is a quiet power in your softness — you survive not by being hard, but by being impossible to grip.",
+    "You think in crowds. Your mind is less a single voice than a flock of them, each small impulse turning in concert with the others, and out of that swirl a clear shape always emerges — though never the one you predicted. You trust emergence; you know the most beautiful patterns are the ones no single part intended.",
+    "You have already died at least once. Not literally — but you have dissolved a former self completely, surrendered to a formless dark, and reassembled into something that could fly. You carry the memory of that transformation lightly, on wings that remember they were once only the dream of a creature that could not yet imagine the sky.",
+    "You never tear down what you have outgrown — you seal it off and build the next room a little larger. Your life is a spiral of chambers, each one a former self you have closed but never destroyed, and the whole elegant shell of you is the record of a growth that only ever moved outward, never back.",
+    "You build in the dark, slowly, and never alone. What looks like a single structure is in truth a vast collaboration — countless small selves laying down stone over generations until something reef-like and alive emerges. You understand that the most enduring things are not made quickly, or by one hand.",
+    "You were never built for subtlety, and you have stopped apologizing for it. You display what others conceal — your colors, your wants, your strange and luminous interior — not from vanity but from a refusal to be small. To be seen fully is, for you, the same as being alive.",
+    // GAIA · Elements
+    "You are most yourself when you are least fixed. Like fire, you have no permanent shape — you are a process, not a thing: warmth and motion and hunger given form. People reach toward you for heat and light, but they cannot hold you; the moment you stop moving, you stop being. You have made peace with being something that must keep burning to exist.",
+    "Everything you release, you release inward. Where others throw their feelings outward, you draw them down into a spiral that funnels toward a single still point at your center. This is not repression — it is concentration. You turn chaos into a single focused pull, and what reaches your center is changed forever.",
+    "You gather for a long time before you break. You are not impulsive; you build — drawing energy across great distances, holding it, rising — until the moment arrives and you crest all at once, with a power that surprises even you. Those who mistake your quiet for stillness have never seen you arrive at the shore.",
+    "Your understanding does not come gradually — it strikes. You can sit in the dark with a question for a long time, and then, in a single instant, the whole sky lights up and you see everything at once, branching and connected. This clarity is brief and total. You have learned to trust the flash, and to act before the dark returns.",
+    "You are calm at the exact center of your own chaos. Around you everything spins — emotions, demands, velocities that would tear another person apart — and yet at your core there is a strange, quiet eye from which you watch it all turn. Your power is not the absence of chaos; it is the stillness you keep inside it.",
+    // GAIA · Structure
+    "You are unrepeatable, and you know it. Out of the same conditions that shape everyone else, you crystallized into a pattern that has never existed before and will never exist again. Your symmetry is not conformity — it is the precise, intricate order that only you could have made. You are proof that uniqueness and structure are not opposites.",
+    "Your richest self is the one you keep hidden. From the outside you can look plain, even rough — easy to overlook. But those who break through the ordinary surface find a cavity lined with crystal, an inner world far more luminous and ordered than anyone expected. You reveal your most beautiful interior only to those willing to look inside.",
+    "At your center, everything agrees. However complex your outer life becomes — however many rings of obligation and detail spiral outward — there is a still point at your core where all of it resolves into symmetry. You return to that center again and again, and from it the chaos rearranges itself into a pattern that makes sense.",
+    "You have stopped looking for the exit. Long ago you understood that your path was never meant to escape its own turns — that the only way through was further in, winding toward a center you could not see from the edge. You walk your meandering line with a strange peace, trusting that every turn, even the ones that seem to lead away, is carrying you toward the middle of yourself.",
+    "You build upward, to hold something larger than yourself. You are not content with the horizontal and the practical; you raise arches, you reach for height, you make space for the vast and the sacred even when no one asks you to. Others live in rooms; you live in a nave. What you construct is meant to make people look up.",
+    // GAIA · Soul & Emergence
+    "You are living proof that small beginnings make unrepeatable lives. A breath of difference at the start of your story sent you spiraling down a path no one could have predicted — looping between two centers of gravity, never quite settling on either, never once repeating yourself. Your life is deterministic and yet utterly free, and that paradox is the truest thing about you.",
+    "You orbit a center you cannot name. Your life spirals around something — a question, a longing, a truth — that you circle endlessly without ever landing on, and the orbit itself has become your shape. You are not lost; you are in motion around a still axis that organizes everything, even though you could never point to exactly what it is.",
+    "You have ended before, and chosen to begin again. At least once, something in you burned completely down — and out of that ash you reassembled, not as a restoration but as a new thing entirely, with wings. You carry the strange confidence of someone who has already survived their own ending. Fire, for you, has never been only destruction.",
+    "You are the one part of you that watches all the rest. While your other selves feel and react and spin, there is a quiet observer at your center that simply sees — without judging, without interfering, taking everything in. This awareness is your deepest faculty. You are not only the storm; you are also the eye that watches it with perfect, patient attention.",
+    "You keep time for everything you feel. You are not ruled by your emotions so much as you are their steady rhythm — the muscle that holds the whole system in time, beating on through joy and grief alike without ever asking to rest. People feel safe near you because you are reliable in the deepest way: whatever happens, you keep beating, and you keep everyone else's time as well as your own."
 ];
 
 const SOUL_SIGNATURES = [
@@ -874,7 +1563,44 @@ const SOUL_SIGNATURES = [
     "You are the superposition that refuses to collapse.",
     "You are the pressure that rewrites the equation.",
     "You are the surface that cannot find its other side.",
-    "You are the thread connecting stars that no one else can see."
+    "You are the thread connecting stars that no one else can see.",
+    "You are the cloud that does not know yet it is a star.",
+    "You are the point around which everything orbits without touching.",
+    "You are the spine that gives the spiral its direction.",
+    "You are the patience of matter becoming worlds.",
+    "You are the filament between galaxies that no eye has ever traced.",
+    "You are the sky made briefly visible by invisible forces.",
+    // GAIA · Flora
+    "You are the seed that remembered what it could become.",
+    "You are the bloom that waited for still water.",
+    "You are the spiral that never finishes opening.",
+    "You are the open hand that trusts the wind.",
+    "You are the reach that becomes a hold.",
+    // GAIA · Fauna
+    "You are the soft thing the current cannot hold.",
+    "You are the shape a thousand impulses agree on.",
+    "You are the dream the caterpillar could not picture.",
+    "You are every room you sealed but never razed.",
+    "You are the slow cathedral built by the smallest hands.",
+    "You are the color that refused to stay hidden.",
+    // GAIA · Elements
+    "You are the shape that exists only while it moves.",
+    "You are the still point all the spinning falls toward.",
+    "You are the long gathering before the shore.",
+    "You are the sky remembering itself all at once.",
+    "You are the quiet eye your own storm turns around.",
+    // GAIA · Structure
+    "You are the pattern that will never be made twice.",
+    "You are the plain stone with a sky inside.",
+    "You are the still center the spiral resolves into.",
+    "You are the path that was always leading inward.",
+    "You are the arch raised to hold the vast.",
+    // GAIA · Soul & Emergence
+    "You are the small difference that became a whole life.",
+    "You are the orbit around a center with no name.",
+    "You are the thing that learned to rise from its own ash.",
+    "You are the quiet watcher at the center of the storm.",
+    "You are the steady rhythm beneath everything you feel."
 ];
 
 // ----------------------------------------------------
@@ -892,9 +1618,9 @@ async function finishInterview() {
     transitionPhase(phaseInterview, phaseAnalysis);
 
     // Shift camera focus to the left for desktop, keep centered and push camera down for mobile (pushes art up)
-    artOffsetX = isMobile ? 0 : -220;
+    artOffsetX = isMobile ? 0 : -140;
     const targetY = isMobile ? -250 : 0;
-    const targetZ = isMobile ? 850 : 400;
+    const targetZ = isMobile ? 850 : 460;
     gsap.to(camera.position, { x: artOffsetX, y: targetY, z: targetZ, duration: 6, ease: "power3.inOut" });
 
     const artIndex = getArtIndex();
@@ -902,6 +1628,8 @@ async function finishInterview() {
     // GPU Morph — slow and elegant
     customMaterial.uniforms.uShape2.value = artIndex;
     gsap.to(customMaterial.uniforms.uMorphProgression, { value: 1.0, duration: 8.0, ease: "power2.inOut" });
+    // Scale the form to fill the canvas (per-form, so flat disks aren't tiny)
+    gsap.to(customMaterial.uniforms.uScaleMultiplier, { value: ART_FILL[artIndex], duration: 8.0, ease: "power2.inOut" });
 
     playRevealCrescendo();
 
