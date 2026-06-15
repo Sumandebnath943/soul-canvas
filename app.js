@@ -1734,6 +1734,14 @@ async function finishInterview() {
     // Scale the form to fill the canvas (per-form, so flat disks aren't tiny)
     gsap.to(customMaterial.uniforms.uScaleMultiplier, { value: ART_FILL[artIndex], duration: 8.0, ease: "power2.inOut" });
 
+    // Settle the soul-state distortion WAY down as the art locks in, so the
+    // revealed form reads as its clean shape (with only a subtle personal wobble +
+    // the always-on life drift). The interview itself stays fully alive.
+    const REVEAL_DISTORT = 0.22;
+    gsap.to(customMaterial.uniforms.uChaos,    { value: soulState.chaos    * REVEAL_DISTORT, duration: 8.0, ease: "power2.inOut" });
+    gsap.to(customMaterial.uniforms.uGravity,  { value: soulState.gravity  * REVEAL_DISTORT, duration: 8.0, ease: "power2.inOut" });
+    gsap.to(customMaterial.uniforms.uFluidity, { value: soulState.fluidity * REVEAL_DISTORT, duration: 8.0, ease: "power2.inOut" });
+
     playRevealCrescendo();
 
     const analysisLines = [
